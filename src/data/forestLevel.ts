@@ -177,3 +177,226 @@ export function getDistance(
   const dy = y2 - y1;
   return Math.hypot(dx, dy);
 }
+
+export interface LevelConfig {
+  level: number;
+  worldWidth: number;
+  worldHeight: number;
+  startPos: { x: number; y: number };
+  lumberStartPos: { x: number; y: number };
+  nodes: ForestNode[];
+  chests: ChestItem[];
+  envProps: EnvProp[];
+  trailPoints: { x: number; y: number }[];
+  lumberPatrolSpeed: number;
+  lumberChaseSpeed: number;
+  detectionBonus: number;
+}
+
+/**
+ * Generates a forest level that becomes progressively longer and more challenging
+ * with each level number (1, 2, 3, ...).
+ * Every row is spaced vertically by ~210-235px so the player can always dash
+ * from row to row within MAX_DASH_DISTANCE (320px).
+ */
+export function generateForestLevel(level: number): LevelConfig {
+  if (level === 1) {
+    return {
+      level: 1,
+      worldWidth: WORLD_WIDTH,
+      worldHeight: WORLD_HEIGHT,
+      startPos: { x: 450, y: 1670 },
+      lumberStartPos: { x: 240, y: 1220 },
+      nodes: INITIAL_NODES,
+      chests: INITIAL_CHESTS.map((c) => ({ ...c, opened: false })),
+      envProps: INITIAL_ENV_PROPS.map((p) => ({ ...p, triggered: false })),
+      trailPoints: [
+        { x: 450, y: 1670 },
+        { x: 350, y: 1540 },
+        { x: 460, y: 1250 },
+        { x: 440, y: 950 },
+        { x: 450, y: 660 },
+        { x: 440, y: 420 },
+        { x: 450, y: 130 },
+      ],
+      lumberPatrolSpeed: 105,
+      lumberChaseSpeed: 152,
+      detectionBonus: 0,
+    };
+  }
+
+  // Deterministic pseudo-random helper seeded by level & index
+  const seeded = (seed: number) => {
+    const x = Math.sin(seed * 9301 + level * 49297) * 233280;
+    return x - Math.floor(x);
+  };
+
+  // Each level adds +2 extra vertical bands (~430px longer per level)
+  const numBands = 6 + (level - 1) * 2;
+  const bandSpacing = 225;
+  const startY = 150 + numBands * bandSpacing;
+  const worldHeight = startY + 140;
+
+  const nodes: ForestNode[] = [
+    {
+      id: 'node-safe-cabin',
+      type: 'safe-cabin',
+      x: 450,
+      y: 130,
+      label: 'Trygga Stugan (Mål!)',
+    },
+  ];
+
+  const chests: ChestItem[] = [];
+  const envProps: EnvProp[] = [];
+  const trailPoints: { x: number; y: number }[] = [];
+
+  const lootCycle: ('matches' | 'lantern' | 'map')[] = [
+    'matches',
+    'lantern',
+    'map',
+  ];
+
+  // Build rows from top (band 1) down to start (band numBands)
+  for (let b = 1; b <= numBands; b++) {
+    const baseY = 130 + b * bandSpacing;
+    const centerJitterX = Math.round((seeded(b * 11) - 0.5) * 90);
+    const centerX = 450 + centerJitterX;
+    const centerY = baseY + Math.round((seeded(b * 13) - 0.5) * 26);
+
+    const leftX = 195 + Math.round(seeded(b * 17) * 75);
+    const leftY = baseY - 35 + Math.round(seeded(b * 19) * 55);
+
+    const rightX = 630 + Math.round(seeded(b * 23) * 75);
+    const rightY = baseY - 25 + Math.round(seeded(b * 29) * 55);
+
+    // Treehouse frequency decreases slightly on higher levels (every 1-2 rows)
+    const treehouseSide =
+      b % 2 === 0
+        ? seeded(b * 31) > 0.5
+          ? 'left'
+          : 'right'
+        : b === numBands - 1
+        ? 'right'
+        : 'none';
+
+    const leftId = `node-b${b}-L`;
+    const centerId = `node-b${b}-C`;
+    const rightId = `node-b${b}-R`;
+
+    nodes.push({
+      id: leftId,
+      type:
+        treehouseSide === 'left'
+          ? b % 4 === 0
+            ? 'treehouse-oak'
+            : 'treehouse-pine'
+          : b % 2 === 0
+          ? 'oak'
+          : 'pine',
+      x: leftX,
+      y: leftY,
+      label: treehouseSide === 'left' ? 'Trädkoja' : undefined,
+    });
+
+    nodes.push({
+      id: centerId,
+      type: b % 3 === 0 ? 'oak' : 'pine',
+      x: centerX,
+      y: centerY,
+    });
+
+    nodes.push({
+      id: rightId,
+      type:
+        treehouseSide === 'right'
+          ? b % 3 === 0
+            ? 'treehouse-oak'
+            : 'treehouse-pine'
+          : b % 2 === 0
+          ? 'pine'
+          : 'oak',
+      x: rightX,
+      y: rightY,
+      label: treehouseSide === 'right' ? 'Gömställe' : undefined,
+    });
+
+    trailPoints.push({ x: centerX, y: centerY });
+
+    // Place chests near side or center nodes
+    if (b % 2 === 1 || b === numBands) {
+      const targetNode =
+        seeded(b * 37) > 0.5
+          ? { id: leftId, x: leftX - 68, y: leftY + 18 }
+          : { id: rightId, x: rightX + 68, y: rightY + 18 };
+      chests.push({
+        id: `chest-b${b}`,
+        x: Math.max(120, Math.min(780, targetNode.x)),
+        y: targetNode.y,
+        nearNodeId: targetNode.id,
+        opened: false,
+        loot: lootCycle[b % lootCycle.length],
+      });
+    }
+
+    // Place bear traps between rows (more traps on higher levels!)
+    const trapsInBand = level >= 3 && b % 2 === 0 ? 2 : 1;
+    for (let t = 0; t < trapsInBand; t++) {
+      const trapX =
+        t === 0
+          ? Math.round((centerX + (b % 2 === 0 ? leftX : rightX)) / 2)
+          : Math.round((centerX + (b % 2 === 0 ? rightX : leftX)) / 2);
+      const trapY = baseY - Math.round(bandSpacing * (0.42 + t * 0.18));
+      envProps.push({
+        id: `prop-trap-b${b}-${t}`,
+        type: 'bear-trap',
+        x: trapX,
+        y: trapY,
+        triggered: false,
+      });
+    }
+
+    // Decorative stumps, rocks, bushes & signposts
+    envProps.push({
+      id: `prop-deco-b${b}`,
+      type:
+        b % 4 === 0
+          ? 'signpost'
+          : b % 3 === 0
+          ? 'stump'
+          : b % 2 === 0
+          ? 'rock'
+          : 'bush',
+      x: b % 2 === 0 ? rightX - 95 : leftX + 95,
+      y: baseY - 90,
+    });
+  }
+
+  // Add Start Node at the bottom
+  nodes.push({
+    id: 'node-start',
+    type: 'oak',
+    x: 450,
+    y: startY,
+    label: 'Startträd',
+  });
+
+  trailPoints.unshift({ x: 450, y: 130 });
+  trailPoints.push({ x: 450, y: startY });
+
+  return {
+    level,
+    worldWidth: WORLD_WIDTH,
+    worldHeight,
+    startPos: { x: 450, y: startY },
+    lumberStartPos: { x: 240, y: startY - 430 },
+    nodes,
+    chests,
+    envProps,
+    trailPoints,
+    lumberPatrolSpeed: Math.min(165, 105 + (level - 1) * 9),
+    lumberChaseSpeed: Math.min(215, 152 + (level - 1) * 10),
+    detectionBonus: Math.min(85, (level - 1) * 14),
+  };
+}
+

@@ -20,8 +20,8 @@ import Svg, {
   Stop,
 } from 'react-native-svg';
 
-const childInspirationImg = require('../../graphics/ChatGPT-bild 18 okt. 2026 15_20_24-1.png');
-const lumberjackInspirationImg = require('../../graphics/ChatGPT-bild 18 okt. 2026 15_22_16.png');
+const childInspirationImg = require('../../graphics/inspo-child.png');
+const lumberjackInspirationImg = require('../../graphics/inspo-lumberjack.png');
 
 interface SplashScreenProps {
   onStartGame: () => void;

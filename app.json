@@ -29,7 +29,7 @@
         "expo-splash-screen",
         {
           "backgroundColor": "#060B10",
-          "image": "./graphics/ChatGPT-bild 18 okt. 2026 15_20_24-1.png",
+          "image": "./graphics/inspo-child.png",
           "imageWidth": 200
         }
       ]

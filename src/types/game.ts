@@ -45,4 +45,4 @@ export interface Inventory {
 
 export type LumberjackMode = 'patrol' | 'chase' | 'blinded';
 
-export type GameStatus = 'menu' | 'playing' | 'won' | 'caught';
+export type GameStatus = 'menu' | 'playing' | 'level-complete' | 'gameover';
