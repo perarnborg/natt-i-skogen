@@ -1,10 +1,10 @@
 import React, { useEffect, useMemo, useRef, useState } from 'react';
 import {
-  Dimensions,
   Pressable,
   StyleSheet,
   Text,
   View,
+  useWindowDimensions,
 } from 'react-native';
 import Svg, { Circle, Defs, Line, RadialGradient, Rect, Stop } from 'react-native-svg';
 import {
@@ -47,9 +47,11 @@ export const GameBoard: React.FC<GameBoardProps> = ({
   character,
   onChangeCharacter,
 }) => {
-  const windowDims = Dimensions.get('window');
-  const viewportWidth = Math.min(windowDims.width, 520);
-  const viewportHeight = Math.max(windowDims.height - 170, 440);
+  const windowDims = useWindowDimensions();
+  const viewportWidth = Math.min(windowDims.width - 16, 520);
+  const [viewportHeight, setViewportHeight] = useState<number>(
+    Math.max(windowDims.height - 280, 320)
+  );
   const scale = viewportWidth / WORLD_WIDTH;
 
   // Player state
@@ -61,6 +63,10 @@ export const GameBoard: React.FC<GameBoardProps> = ({
   });
   const [isRunning, setIsRunning] = useState<boolean>(false);
   const [trappedTimer, setTrappedTimer] = useState<number>(0);
+  const [dustPuffs, setDustPuffs] = useState<
+    { id: number; x: number; y: number; ttl: number; heavy?: boolean }[]
+  >([]);
+  const stepCounterRef = useRef<number>(0);
 
   // World items & props
   const [chests, setChests] = useState<ChestItem[]>(INITIAL_CHESTS);
@@ -92,6 +98,15 @@ export const GameBoard: React.FC<GameBoardProps> = ({
     () => INITIAL_NODES.find((n) => n.id === currentNodeId)!,
     [currentNodeId]
   );
+
+  const playerLean = useMemo(() => {
+    if (!isRunning || !targetNodeId) return 0;
+    const target = INITIAL_NODES.find((n) => n.id === targetNodeId);
+    if (!target) return 0;
+    const dx = target.x - playerPos.x;
+    if (Math.abs(dx) < 15) return 0;
+    return dx > 0 ? 1 : -1;
+  }, [isRunning, playerPos.x, targetNodeId]);
 
   const isHidingInTreehouse =
     !isRunning && isTreehouseNode(currentNode.type);
@@ -149,6 +164,39 @@ export const GameBoard: React.FC<GameBoardProps> = ({
 
       // Update trap timer
       setTrappedTimer((prev) => Math.max(0, prev - dt));
+
+      // Update footstep dust puffs
+      stepCounterRef.current += 1;
+      setDustPuffs((prev) => {
+        const next = prev
+          .map((p) => ({ ...p, ttl: p.ttl - dt }))
+          .filter((p) => p.ttl > 0);
+
+        if (isRunning && stepCounterRef.current % 2 === 0) {
+          const offsetSide = stepCounterRef.current % 4 === 0 ? -9 : 9;
+          next.push({
+            id: Date.now() + Math.random(),
+            x: playerPos.x + offsetSide,
+            y: playerPos.y + 8,
+            ttl: 0.35,
+          });
+        }
+        if (
+          lumberMode === 'chase' &&
+          blindedTimer <= 0 &&
+          stepCounterRef.current % 3 === 0
+        ) {
+          const offsetSide = stepCounterRef.current % 6 === 0 ? -14 : 14;
+          next.push({
+            id: Date.now() + Math.random() + 1,
+            x: lumberPos.x + offsetSide,
+            y: lumberPos.y + 12,
+            ttl: 0.4,
+            heavy: true,
+          });
+        }
+        return next.slice(-14);
+      });
 
       // Update blinded timer
       setBlindedTimer((prev) => {
@@ -475,9 +523,15 @@ export const GameBoard: React.FC<GameBoardProps> = ({
 
       {/* MAIN SCROLLING FOREST VIEWPORT */}
       <View
+        onLayout={(e) => {
+          const h = e.nativeEvent.layout.height;
+          if (h > 0 && Math.abs(h - viewportHeight) > 2) {
+            setViewportHeight(h);
+          }
+        }}
         style={[
           styles.viewport,
-          { width: viewportWidth, height: viewportHeight },
+          { width: viewportWidth },
         ]}
       >
         <View
@@ -739,6 +793,30 @@ export const GameBoard: React.FC<GameBoardProps> = ({
             );
           })}
 
+          {/* 3.5 FOOTSTEP DUST PUFFS ON FOREST FLOOR */}
+          {dustPuffs.map((puff) => {
+            const puffSize = (puff.heavy ? 18 : 12) * scale;
+            return (
+              <View
+                key={puff.id}
+                pointerEvents="none"
+                style={{
+                  position: 'absolute',
+                  left: puff.x * scale - puffSize / 2,
+                  top: puff.y * scale - puffSize / 2,
+                  width: puffSize,
+                  height: puffSize * 0.65,
+                  borderRadius: puffSize,
+                  backgroundColor: puff.heavy
+                    ? 'rgba(239, 68, 68, 0.35)'
+                    : 'rgba(186, 230, 253, 0.45)',
+                  opacity: Math.max(0, Math.min(1, puff.ttl * 2.5)),
+                  zIndex: Math.round(puff.y) + 1,
+                }}
+              />
+            );
+          })}
+
           {/* 4. MAIN CHARACTER (Hidden inside cabin when in a treehouse) */}
           {!isHidingInTreehouse && (
             <View
@@ -754,7 +832,13 @@ export const GameBoard: React.FC<GameBoardProps> = ({
               {flashBurstActive && (
                 <View style={styles.flashOverlayCircle} />
               )}
-              <CharacterSprite character={character} size={76 * scale} />
+              <CharacterSprite
+                character={character}
+                size={76 * scale}
+                isMoving={isRunning}
+                trapped={trappedTimer > 0}
+                leanDirection={playerLean}
+              />
             </View>
           )}
 
@@ -774,6 +858,8 @@ export const GameBoard: React.FC<GameBoardProps> = ({
           >
             <LumberjackSprite
               blinded={lumberMode === 'blinded'}
+              mode={lumberMode}
+              isMoving={status === 'playing' && lumberMode !== 'blinded'}
               size={96 * scale}
             />
           </View>
@@ -817,36 +903,40 @@ export const GameBoard: React.FC<GameBoardProps> = ({
                   ? 'lit'
                   : 'unlit'
               }
-              size={34}
+              size={28}
             />
-            <View>
-              <Text style={styles.invTitle}>
+            <View style={styles.invTextCol}>
+              <Text style={styles.invTitle} numberOfLines={1}>
                 Lyktor: {inventory.lanterns}
               </Text>
-              <Text style={styles.invSub}>
-                {inventory.lanternLit ? 'Tänd (+Syn)' : 'Tryck för att tända'}
+              <Text style={styles.invSub} numberOfLines={1}>
+                {inventory.lanternLit ? 'Tänd (+Syn)' : 'Tänd lykta'}
               </Text>
             </View>
           </Pressable>
 
           {/* Matches slot */}
           <Pressable style={styles.invCard} onPress={handleLightLantern}>
-            <ItemSprite item="matches" size={34} />
-            <View>
-              <Text style={styles.invTitle}>
-                Tändstickor: {inventory.matches}
+            <ItemSprite item="matches" size={28} />
+            <View style={styles.invTextCol}>
+              <Text style={styles.invTitle} numberOfLines={1}>
+                Stickor: {inventory.matches}
               </Text>
-              <Text style={styles.invSub}>Tänder lyktor</Text>
+              <Text style={styles.invSub} numberOfLines={1}>
+                Tänder
+              </Text>
             </View>
           </Pressable>
 
           {/* Maps slot */}
           <View style={styles.invCard}>
-            <ItemSprite item="map" size={34} />
-            <View>
-              <Text style={styles.invTitle}>Kartor: {inventory.maps}</Text>
-              <Text style={styles.invSub}>
-                Synfält: {Math.round(sightRadius)}m
+            <ItemSprite item="map" size={28} />
+            <View style={styles.invTextCol}>
+              <Text style={styles.invTitle} numberOfLines={1}>
+                Kartor: {inventory.maps}
+              </Text>
+              <Text style={styles.invSub} numberOfLines={1}>
+                Syn: {Math.round(sightRadius)}m
               </Text>
             </View>
           </View>
@@ -876,16 +966,17 @@ const styles = StyleSheet.create({
     backgroundColor: '#060B10',
     alignItems: 'center',
     justifyContent: 'space-between',
-    paddingVertical: 6,
+    paddingVertical: 4,
+    gap: 6,
   },
   topHud: {
     backgroundColor: '#0F1A24',
     borderColor: '#1E3242',
     borderWidth: 1,
     borderRadius: 12,
-    paddingHorizontal: 12,
-    paddingVertical: 8,
-    gap: 6,
+    paddingHorizontal: 10,
+    paddingVertical: 6,
+    gap: 5,
   },
   topRow: {
     flexDirection: 'row',
@@ -894,13 +985,13 @@ const styles = StyleSheet.create({
   },
   gameTitle: {
     color: '#F8FAFC',
-    fontSize: 15,
+    fontSize: 14,
     fontWeight: '800',
     letterSpacing: 0.5,
   },
   subText: {
     color: '#94A3B8',
-    fontSize: 11,
+    fontSize: 10,
   },
   topRightButtons: {
     flexDirection: 'row',
@@ -910,7 +1001,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#1E293B',
     borderColor: '#334155',
     borderWidth: 1,
-    paddingHorizontal: 9,
+    paddingHorizontal: 8,
     paddingVertical: 4,
     borderRadius: 8,
   },
@@ -926,7 +1017,7 @@ const styles = StyleSheet.create({
   },
   progressBarBg: {
     flex: 1,
-    height: 8,
+    height: 7,
     backgroundColor: '#1E293B',
     borderRadius: 4,
     overflow: 'hidden',
@@ -954,10 +1045,12 @@ const styles = StyleSheet.create({
   },
   statusPillText: {
     color: '#F8FAFC',
-    fontSize: 11,
+    fontSize: 10,
     fontWeight: '700',
   },
   viewport: {
+    flex: 1,
+    minHeight: 220,
     backgroundColor: '#091118',
     borderRadius: 14,
     borderWidth: 1.5,
@@ -1047,9 +1140,9 @@ const styles = StyleSheet.create({
     borderColor: '#1E3242',
     borderWidth: 1,
     borderRadius: 12,
-    paddingHorizontal: 10,
-    paddingVertical: 8,
-    gap: 6,
+    paddingHorizontal: 8,
+    paddingVertical: 6,
+    gap: 5,
   },
   toastText: {
     color: '#FDE68A',
@@ -1061,7 +1154,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-between',
-    gap: 6,
+    gap: 5,
   },
   invCard: {
     flex: 1,
@@ -1071,9 +1164,12 @@ const styles = StyleSheet.create({
     borderColor: '#273E52',
     borderWidth: 1,
     borderRadius: 9,
-    paddingHorizontal: 6,
-    paddingVertical: 5,
-    gap: 5,
+    paddingHorizontal: 5,
+    paddingVertical: 4,
+    gap: 4,
+  },
+  invTextCol: {
+    flex: 1,
   },
   invTitle: {
     color: '#F1F5F9',
@@ -1082,12 +1178,12 @@ const styles = StyleSheet.create({
   },
   invSub: {
     color: '#94A3B8',
-    fontSize: 9,
+    fontSize: 8.5,
   },
   blindActionBtn: {
     backgroundColor: '#FACC15',
-    paddingHorizontal: 11,
-    paddingVertical: 10,
+    paddingHorizontal: 9,
+    paddingVertical: 9,
     borderRadius: 9,
     borderWidth: 1.5,
     borderColor: '#EAB308',
@@ -1099,7 +1195,7 @@ const styles = StyleSheet.create({
   },
   blindActionBtnText: {
     color: '#1E1B18',
-    fontSize: 11,
+    fontSize: 10.5,
     fontWeight: '900',
   },
 });

@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 import {
   Pressable,
-  SafeAreaView,
   StatusBar,
   StyleSheet,
   Text,
   View,
 } from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
 import { GameBoard } from '../components/GameBoard';
 import { CharacterSprite, LumberjackSprite } from '../components/SvgSprites';
 import { CharacterId } from '../types/game';
