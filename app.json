@@ -28,9 +28,9 @@
       [
         "expo-splash-screen",
         {
-          "backgroundColor": "#208AEF",
-          "image": "./assets/images/splash-icon.png",
-          "imageWidth": 76
+          "backgroundColor": "#060B10",
+          "image": "./graphics/ChatGPT-bild 18 okt. 2026 15_20_24-1.png",
+          "imageWidth": 200
         }
       ]
     ],

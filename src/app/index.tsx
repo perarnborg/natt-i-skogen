@@ -8,6 +8,7 @@ import {
 } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { GameBoard } from '../components/GameBoard';
+import { SplashScreen } from '../components/SplashScreen';
 import { CharacterSprite, LumberjackSprite } from '../components/SvgSprites';
 import { CharacterId } from '../types/game';
 
@@ -33,18 +34,32 @@ const CHARACTER_OPTIONS: {
   },
 ];
 
+type AppScreen = 'splash' | 'select' | 'game';
+
 export default function App() {
   const [selectedCharacter, setSelectedCharacter] =
     useState<CharacterId>('girl');
-  const [inGame, setInGame] = useState<boolean>(true);
+  const [screen, setScreen] = useState<AppScreen>('splash');
 
-  if (inGame) {
+  if (screen === 'splash') {
+    return (
+      <SafeAreaView style={styles.safeArea}>
+        <StatusBar barStyle="light-content" />
+        <SplashScreen
+          onStartGame={() => setScreen('game')}
+          onChooseCharacter={() => setScreen('select')}
+        />
+      </SafeAreaView>
+    );
+  }
+
+  if (screen === 'game') {
     return (
       <SafeAreaView style={styles.safeArea}>
         <StatusBar barStyle="light-content" />
         <GameBoard
           character={selectedCharacter}
-          onChangeCharacter={() => setInGame(false)}
+          onChangeCharacter={() => setScreen('select')}
         />
       </SafeAreaView>
     );
@@ -85,8 +100,14 @@ export default function App() {
           })}
         </View>
 
-        <Pressable style={styles.startBtn} onPress={() => setInGame(true)}>
+        <Pressable style={styles.startBtn} onPress={() => setScreen('game')}>
           <Text style={styles.startBtnText}>Spring ut i skogen!</Text>
+        </Pressable>
+
+        <Pressable onPress={() => setScreen('splash')}>
+          <Text style={{ color: '#64748B', fontSize: 12, fontWeight: '600' }}>
+            ← Tillbaka till startskärmen
+          </Text>
         </Pressable>
       </View>
     </SafeAreaView>
