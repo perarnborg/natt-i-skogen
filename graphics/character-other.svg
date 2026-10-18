@@ -1,0 +1,165 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 240" width="200" height="240">
+  <defs>
+    <linearGradient id="otherPonchoGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#438A6E" />
+      <stop offset="65%" stop-color="#2E6B53" />
+      <stop offset="100%" stop-color="#1E4B39" />
+    </linearGradient>
+    <linearGradient id="otherHoodGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#4D997B" />
+      <stop offset="100%" stop-color="#2E6B53" />
+    </linearGradient>
+    <linearGradient id="otherHairGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#8C3B2B" />
+      <stop offset="100%" stop-color="#592217" />
+    </linearGradient>
+    <linearGradient id="otherSkinGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#F5CBA7" />
+      <stop offset="100%" stop-color="#E0AC82" />
+    </linearGradient>
+    <radialGradient id="otherFlashlightGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#FFF6A9" stop-opacity="0.95" />
+      <stop offset="50%" stop-color="#FFE066" stop-opacity="0.4" />
+      <stop offset="100%" stop-color="#FFE066" stop-opacity="0" />
+    </radialGradient>
+  </defs>
+
+  <!-- Ground Shadow (3/4 top-down perspective) -->
+  <g id="shadow">
+    <ellipse cx="100" cy="212" rx="46" ry="16" fill="#090D16" opacity="0.55" />
+    <ellipse cx="100" cy="212" rx="34" ry="11" fill="#05070C" opacity="0.45" />
+  </g>
+
+  <!-- Backpack (Ochre/Mustard Canvas Pack peeking behind shoulders) -->
+  <g id="backpack">
+    <rect x="58" y="106" width="84" height="58" rx="18" fill="#D99429" stroke="#1E1715" stroke-width="4" />
+    <rect x="65" y="99" width="70" height="13" rx="6.5" fill="#7A3E48" stroke="#1E1715" stroke-width="3.5" />
+  </g>
+
+  <!-- Legs & Boots -->
+  <g id="legs">
+    <!-- Left Leg -->
+    <path d="M76 166 L75 191 L93 191 L93 166 Z" fill="#3D314A" stroke="#1E1715" stroke-width="4" stroke-linejoin="round" />
+    <!-- Right Leg -->
+    <path d="M107 166 L107 191 L125 191 L124 166 Z" fill="#3D314A" stroke="#1E1715" stroke-width="4" stroke-linejoin="round" />
+
+    <!-- Left Boot -->
+    <path d="M72 187 L95 187 L95 208 Q95 214 82 214 L70 214 Q65 214 66 206 L70 194 Z" fill="#593825" stroke="#1E1715" stroke-width="4" stroke-linejoin="round" />
+    <path d="M72 192 L95 192" stroke="#E8C574" stroke-width="3" />
+    <path d="M66 210 L95 210" stroke="#2E1C12" stroke-width="3.5" stroke-linecap="round" />
+
+    <!-- Right Boot -->
+    <path d="M105 187 L128 187 L130 194 L134 206 Q135 214 130 214 L118 214 Q105 214 105 208 Z" fill="#593825" stroke="#1E1715" stroke-width="4" stroke-linejoin="round" />
+    <path d="M105 192 L128 192" stroke="#E8C574" stroke-width="3" />
+    <path d="M105 210 L134 210" stroke="#2E1C12" stroke-width="3.5" stroke-linecap="round" />
+  </g>
+
+  <!-- Torso: Cozy Nordic Forest Poncho / Cape -->
+  <g id="torso">
+    <path d="M64 118 Q53 146 50 168 Q100 186 150 168 Q147 146 136 118 Z" fill="url(#otherPonchoGrad)" stroke="#1E1715" stroke-width="4" stroke-linejoin="round" />
+    <!-- Nordic woven pattern trim along bottom of poncho -->
+    <path d="M55 156 L68 164 L80 158 L93 166 L100 161 L107 166 L120 158 L132 164 L145 156" fill="none" stroke="#F4D37D" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" />
+    <!-- Center wooden toggle clasp -->
+    <line x1="100" y1="126" x2="100" y2="152" stroke="#1E1715" stroke-width="3" />
+    <rect x="92" y="136" width="16" height="5" rx="2.5" fill="#7A4928" stroke="#1E1715" stroke-width="2" />
+    <rect x="92" y="146" width="16" height="5" rx="2.5" fill="#7A4928" stroke="#1E1715" stroke-width="2" />
+  </g>
+
+  <!-- Left Hand peeking from poncho -->
+  <g id="arm-left">
+    <circle cx="53" cy="161" r="7" fill="#D99429" stroke="#1E1715" stroke-width="3.5" />
+  </g>
+
+  <!-- Right Hand & Flashlight -->
+  <g id="arm-right">
+    <circle cx="147" cy="159" r="7" fill="#D99429" stroke="#1E1715" stroke-width="3.5" />
+    <g id="flashlight">
+      <rect x="141" y="152" width="18" height="10" rx="3" transform="rotate(25 150 157)" fill="#4A5568" stroke="#1E1715" stroke-width="3" />
+      <ellipse cx="158" cy="161" rx="4" ry="6" transform="rotate(25 158 161)" fill="#FFF380" stroke="#1E1715" stroke-width="2.5" />
+      <circle cx="162" cy="164" r="18" fill="url(#otherFlashlightGlow)" />
+    </g>
+  </g>
+
+  <!-- Warm Mustard Bandana / Neck Warmer -->
+  <g id="scarf">
+    <path d="M68 114 Q100 126 132 114 L100 139 Z" fill="#F2B84B" stroke="#1E1715" stroke-width="4" stroke-linejoin="round" />
+    <path d="M80 119 L100 131 L120 119" fill="none" stroke="#C84B31" stroke-width="2.5" stroke-linecap="round" />
+  </g>
+
+  <!-- Wavy Auburn Curls framing sides of head -->
+  <g id="hair-sides">
+    <circle cx="53" cy="96" r="10" fill="url(#otherHairGrad)" stroke="#1E1715" stroke-width="3.5" />
+    <circle cx="48" cy="107" r="8.5" fill="url(#otherHairGrad)" stroke="#1E1715" stroke-width="3.5" />
+    <circle cx="147" cy="96" r="10" fill="url(#otherHairGrad)" stroke="#1E1715" stroke-width="3.5" />
+    <circle cx="152" cy="107" r="8.5" fill="url(#otherHairGrad)" stroke="#1E1715" stroke-width="3.5" />
+  </g>
+
+  <!-- Head (3/4 top-down proportion) -->
+  <g id="head">
+    <!-- Ears -->
+    <circle cx="55" cy="88" r="8" fill="url(#otherSkinGrad)" stroke="#1E1715" stroke-width="3.5" />
+    <circle cx="145" cy="88" r="8" fill="url(#otherSkinGrad)" stroke="#1E1715" stroke-width="3.5" />
+
+    <!-- Head base -->
+    <rect x="57" y="42" width="86" height="78" rx="40" fill="url(#otherSkinGrad)" stroke="#1E1715" stroke-width="4" />
+
+    <!-- Rosy Cheeks & Freckles -->
+    <ellipse cx="72" cy="100" rx="8" ry="5" fill="#E87A74" opacity="0.5" />
+    <ellipse cx="128" cy="100" rx="8" ry="5" fill="#E87A74" opacity="0.5" />
+    <circle cx="71" cy="99" r="1.3" fill="#A6633C" />
+    <circle cx="76" cy="101" r="1.3" fill="#A6633C" />
+    <circle cx="94" cy="96" r="1.2" fill="#A6633C" />
+    <circle cx="106" cy="96" r="1.2" fill="#A6633C" />
+    <circle cx="124" cy="101" r="1.3" fill="#A6633C" />
+    <circle cx="129" cy="99" r="1.3" fill="#A6633C" />
+
+    <!-- Face / Expressive Eyes -->
+    <g id="face">
+      <!-- Left Eye -->
+      <ellipse cx="81" cy="89" rx="7.5" ry="9" fill="#FFFFFF" stroke="#1E1715" stroke-width="3" />
+      <ellipse cx="82" cy="90" rx="4.8" ry="6" fill="#3B2718" />
+      <circle cx="79.5" cy="86.5" r="2.2" fill="#FFFFFF" />
+      <circle cx="84" cy="92.5" r="1.1" fill="#FFFFFF" />
+
+      <!-- Right Eye -->
+      <ellipse cx="119" cy="89" rx="7.5" ry="9" fill="#FFFFFF" stroke="#1E1715" stroke-width="3" />
+      <ellipse cx="118" cy="90" rx="4.8" ry="6" fill="#3B2718" />
+      <circle cx="116.5" cy="86.5" r="2.2" fill="#FFFFFF" />
+      <circle cx="121" cy="92.5" r="1.1" fill="#FFFFFF" />
+
+      <!-- Eyebrows (curious & alert) -->
+      <path d="M72 76 Q80 73 88 77" fill="none" stroke="#592217" stroke-width="3.2" stroke-linecap="round" />
+      <path d="M128 76 Q120 73 112 77" fill="none" stroke="#592217" stroke-width="3.2" stroke-linecap="round" />
+
+      <!-- Nose -->
+      <path d="M98 95 Q100 98 102 95" fill="none" stroke="#BA7E56" stroke-width="2.8" stroke-linecap="round" />
+
+      <!-- Mouth -->
+      <path d="M95 106 Q100 108 105 105" fill="none" stroke="#1E1715" stroke-width="2.8" stroke-linecap="round" />
+    </g>
+
+    <!-- Swooping Curly Bangs -->
+    <g id="hair-front">
+      <path d="M56 76 Q72 58 98 68 Q112 58 144 76 Q126 62 104 74 Q82 62 56 76 Z" fill="url(#otherHairGrad)" stroke="#1E1715" stroke-width="3.5" stroke-linejoin="round" />
+    </g>
+
+    <!-- Forest Hood / Hat with Stitched Animal-Ear Corners & Goggles/Band (iconic 3/4 silhouette) -->
+    <g id="hat">
+      <!-- Stitched Bear/Fox Ear Corners on top of hood -->
+      <circle cx="64" cy="36" r="13" fill="#2E6B53" stroke="#1E1715" stroke-width="4" />
+      <circle cx="64" cy="36" r="6.5" fill="#F2B84B" />
+      <circle cx="136" cy="36" r="13" fill="#2E6B53" stroke="#1E1715" stroke-width="4" />
+      <circle cx="136" cy="36" r="6.5" fill="#F2B84B" />
+
+      <!-- Main Hood Dome -->
+      <path d="M54 68 C52 28, 148 28, 146 68 Z" fill="url(#otherHoodGrad)" stroke="#1E1715" stroke-width="4" stroke-linejoin="round" />
+      <!-- Center hood seam -->
+      <path d="M100 35 L100 62" stroke="#1E4B39" stroke-width="3" stroke-linecap="round" />
+
+      <!-- Hood Brim with Warm Trim -->
+      <path d="M52 63 Q100 52 148 63 L146 73 Q100 62 54 73 Z" fill="#3B8065" stroke="#1E1715" stroke-width="4" stroke-linejoin="round" />
+      <!-- Little Oak Leaf Pin on Hat -->
+      <path d="M126 55 Q138 46 142 56 Q134 64 126 55 Z" fill="#F2B84B" stroke="#1E1715" stroke-width="2.5" stroke-linejoin="round" />
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 180" width="200" height="180">
+  <defs>
+    <!-- Aged Parchment Paper Gradient -->
+    <linearGradient id="mapParchment" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F7E6C4" />
+      <stop offset="65%" stop-color="#E5C896" />
+      <stop offset="100%" stop-color="#C7A26B" />
+    </linearGradient>
+    <!-- Rolled Scroll Edge Shading -->
+    <linearGradient id="mapScrollRoll" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#B89058" />
+      <stop offset="45%" stop-color="#EBD3A7" />
+      <stop offset="100%" stop-color="#9E7640" />
+    </linearGradient>
+  </defs>
+
+  <!-- Ground Shadow -->
+  <g id="shadow">
+    <ellipse cx="100" cy="150" rx="72" ry="18" fill="#06090F" opacity="0.6" />
+  </g>
+
+  <!-- Unrolled Forest Map Scroll (3/4 Top-Down Perspective) -->
+  <g id="map" transform="rotate(-6 100 94)">
+    <!-- Main Parchment Sheet with Torn Notch -->
+    <path d="M36 42 Q100 34 164 42 L172 134 Q134 140 112 135 L106 126 L100 135 Q68 140 28 134 Z" fill="url(#mapParchment)" stroke="#17120F" stroke-width="4" stroke-linejoin="round" />
+
+    <!-- Inner Map Border Frame -->
+    <path d="M46 52 Q100 46 154 52 L160 124 Q100 130 40 124 Z" fill="none" stroke="#8C6239" stroke-width="2" stroke-dasharray="6 3" />
+
+    <!-- Drawn River & Forest Features on Map -->
+    <g id="map-drawings">
+      <!-- Winding River Line -->
+      <path d="M52 54 Q76 78 64 102 Q56 116 72 126" fill="none" stroke="#4A7C8C" stroke-width="4" stroke-linecap="round" opacity="0.75" />
+
+      <!-- Drawn Little Pine Trees on Map -->
+      <path d="M62 62 L55 74 L69 74 Z" fill="#2E6B4E" stroke="#4A321F" stroke-width="1.8" stroke-linejoin="round" />
+      <path d="M82 58 L75 70 L89 70 Z" fill="#2E6B4E" stroke="#4A321F" stroke-width="1.8" stroke-linejoin="round" />
+      <path d="M138 92 L131 104 L145 104 Z" fill="#2E6B4E" stroke="#4A321F" stroke-width="1.8" stroke-linejoin="round" />
+
+      <!-- Dotted Trail leading across the forest to the X -->
+      <path d="M54 110 Q84 114 98 92 Q112 70 136 74" fill="none" stroke="#5E3A22" stroke-width="3" stroke-linecap="round" stroke-dasharray="4 6" />
+
+      <!-- Red 'X' Marking Safe Cabin / Treasure -->
+      <g id="map-x">
+        <line x1="130" y1="66" x2="146" y2="82" stroke="#C83228" stroke-width="4.5" stroke-linecap="round" />
+        <line x1="146" y1="66" x2="130" y2="82" stroke="#C83228" stroke-width="4.5" stroke-linecap="round" />
+      </g>
+
+      <!-- Compass Rose in Bottom Right Corner -->
+      <g id="compass" transform="translate(110, 106)">
+        <circle cx="0" cy="0" r="11" fill="#F7E6C4" stroke="#5E3A22" stroke-width="2" />
+        <path d="M0 -13 L3 -3 L13 0 L3 3 L0 13 L-3 3 L-13 0 L-3 -3 Z" fill="#8C5832" stroke="#4A2E1B" stroke-width="1.2" />
+        <path d="M0 -13 L3 -3 L-3 -3 Z" fill="#C83228" />
+      </g>
+    </g>
+
+    <!-- Left Rolled Scroll Cylinder -->
+    <path d="M24 38 C16 38, 14 138, 22 138 L36 138 C28 138, 30 38, 38 38 Z" fill="url(#mapScrollRoll)" stroke="#17120F" stroke-width="4" stroke-linejoin="round" />
+    <ellipse cx="29" cy="138" rx="7" ry="4.5" fill="#7A562C" stroke="#17120F" stroke-width="3" />
+
+    <!-- Right Rolled Scroll Cylinder -->
+    <path d="M162 38 C170 38, 178 138, 170 138 L182 138 C190 138, 182 38, 174 38 Z" fill="url(#mapScrollRoll)" stroke="#17120F" stroke-width="4" stroke-linejoin="round" />
+    <ellipse cx="176" cy="138" rx="7" ry="4.5" fill="#7A562C" stroke="#17120F" stroke-width="3" />
+  </g>
+</svg>

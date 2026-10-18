@@ -1,0 +1,176 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 340" width="300" height="340">
+  <defs>
+    <!-- Tree Trunk Bark Gradient -->
+    <linearGradient id="thTrunkGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#5E3F2B" />
+      <stop offset="55%" stop-color="#422B1C" />
+      <stop offset="100%" stop-color="#26180F" />
+    </linearGradient>
+
+    <!-- Cabin Wood Planks Gradient -->
+    <linearGradient id="cabinWoodGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#9C6B43" />
+      <stop offset="65%" stop-color="#7A502E" />
+      <stop offset="100%" stop-color="#57361D" />
+    </linearGradient>
+
+    <!-- Roof Shingles Gradient -->
+    <linearGradient id="roofGrad" x1="20%" y1="0%" x2="80%" y2="100%">
+      <stop offset="0%" stop-color="#4A5568" />
+      <stop offset="60%" stop-color="#2D3748" />
+      <stop offset="100%" stop-color="#1A202C" />
+    </linearGradient>
+
+    <!-- Foliage Gradients -->
+    <radialGradient id="thCanopyBack" cx="45%" cy="35%" r="65%">
+      <stop offset="0%" stop-color="#22473B" />
+      <stop offset="75%" stop-color="#132B23" />
+      <stop offset="100%" stop-color="#0A1713" />
+    </radialGradient>
+
+    <radialGradient id="thCanopyTop" cx="40%" cy="30%" r="60%">
+      <stop offset="0%" stop-color="#3B7561" />
+      <stop offset="70%" stop-color="#21473A" />
+      <stop offset="100%" stop-color="#122921" />
+    </radialGradient>
+
+    <!-- Warm Lantern & Window Glow -->
+    <radialGradient id="warmLanternGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#FFE885" stop-opacity="0.9" />
+      <stop offset="45%" stop-color="#F6AD55" stop-opacity="0.4" />
+      <stop offset="100%" stop-color="#F6AD55" stop-opacity="0" />
+    </radialGradient>
+  </defs>
+
+  <!-- Ground Shadow (3/4 top-down) -->
+  <g id="shadow">
+    <ellipse cx="150" cy="304" rx="104" ry="26" fill="#06090F" opacity="0.65" />
+    <ellipse cx="150" cy="304" rx="76" ry="18" fill="#030508" opacity="0.55" />
+  </g>
+
+  <!-- Back Foliage Behind Treehouse -->
+  <g id="foliage-back">
+    <path d="M36 138 C16 104, 42 54, 88 52 C110 22, 186 20, 212 52 C256 54, 282 104, 262 138 C272 168, 240 192, 204 182 C168 198, 132 198, 96 182 C60 192, 28 168, 36 138 Z" fill="url(#thCanopyBack)" stroke="#14100E" stroke-width="4" stroke-linejoin="round" />
+  </g>
+
+  <!-- Massive Trunk & Support Branches -->
+  <g id="trunk">
+    <!-- Left & Right Thick Support Branches -->
+    <path d="M114 206 L64 166 L78 152 L124 186 Z" fill="url(#thTrunkGrad)" stroke="#14100E" stroke-width="4" stroke-linejoin="round" />
+    <path d="M186 206 L236 166 L222 152 L176 186 Z" fill="url(#thTrunkGrad)" stroke="#14100E" stroke-width="4" stroke-linejoin="round" />
+
+    <!-- Main Trunk & Roots -->
+    <path d="M112 174 Q114 232 98 274 Q82 294 60 302 Q90 310 116 296 L126 308 Q150 314 174 308 L184 296 Q210 310 240 302 Q218 294 202 274 Q186 232 188 174 Z" fill="url(#thTrunkGrad)" stroke="#14100E" stroke-width="4" stroke-linejoin="round" />
+
+    <!-- Bark Lines -->
+    <path d="M124 196 Q128 242 114 286" fill="none" stroke="#26180F" stroke-width="3" stroke-linecap="round" />
+    <path d="M176 196 Q172 242 186 286" fill="none" stroke="#26180F" stroke-width="3" stroke-linecap="round" />
+    <path d="M150 210 L148 294" fill="none" stroke="#26180F" stroke-width="3" stroke-linecap="round" />
+
+    <!-- Nailed Wooden Step Blocks on Trunk -->
+    <rect x="148" y="256" width="22" height="7" rx="2" transform="rotate(-6 159 259)" fill="#8C5D38" stroke="#14100E" stroke-width="2.5" />
+    <rect x="144" y="276" width="22" height="7" rx="2" transform="rotate(5 155 279)" fill="#8C5D38" stroke="#14100E" stroke-width="2.5" />
+  </g>
+
+  <!-- Wooden Platform & Diagonal Support Struts -->
+  <g id="platform">
+    <!-- Diagonal Wooden Braces under platform -->
+    <path d="M112 224 L74 186 L86 184 L116 212 Z" fill="#6E4728" stroke="#14100E" stroke-width="3.5" stroke-linejoin="round" />
+    <path d="M188 224 L226 186 L214 184 L184 212 Z" fill="#6E4728" stroke="#14100E" stroke-width="3.5" stroke-linejoin="round" />
+
+    <!-- Platform Deck (viewed slightly from above in 3/4 perspective) -->
+    <path d="M62 170 L238 170 L250 186 L50 186 Z" fill="#8C5D38" stroke="#14100E" stroke-width="4" stroke-linejoin="round" />
+    <!-- Platform Front Rim Plank -->
+    <rect x="50" y="182" width="200" height="10" rx="2" fill="#694326" stroke="#14100E" stroke-width="3.5" />
+    <!-- Plank seam lines -->
+    <line x1="90" y1="182" x2="90" y2="192" stroke="#14100E" stroke-width="2.5" />
+    <line x1="135" y1="182" x2="135" y2="192" stroke="#14100E" stroke-width="2.5" />
+    <line x1="175" y1="182" x2="175" y2="192" stroke="#14100E" stroke-width="2.5" />
+    <line x1="215" y1="182" x2="215" y2="192" stroke="#14100E" stroke-width="2.5" />
+  </g>
+
+  <!-- Hanging Rope Ladder (for climbing up into the treehouse) -->
+  <g id="rope-ladder">
+    <!-- Left & Right Ropes -->
+    <path d="M104 188 Q101 245 96 302" fill="none" stroke="#C29B61" stroke-width="3.5" stroke-linecap="round" />
+    <path d="M132 188 Q129 245 124 302" fill="none" stroke="#C29B61" stroke-width="3.5" stroke-linecap="round" />
+    <!-- Wooden Rungs -->
+    <rect x="99" y="198" width="36" height="7" rx="3" transform="rotate(-3 117 201)" fill="#9C6B43" stroke="#14100E" stroke-width="2.5" />
+    <rect x="98" y="218" width="36" height="7" rx="3" transform="rotate(2 116 221)" fill="#9C6B43" stroke="#14100E" stroke-width="2.5" />
+    <rect x="96" y="238" width="36" height="7" rx="3" transform="rotate(-4 114 241)" fill="#9C6B43" stroke="#14100E" stroke-width="2.5" />
+    <rect x="95" y="258" width="36" height="7" rx="3" transform="rotate(3 113 261)" fill="#9C6B43" stroke="#14100E" stroke-width="2.5" />
+    <rect x="93" y="278" width="36" height="7" rx="3" transform="rotate(-2 111 281)" fill="#9C6B43" stroke="#14100E" stroke-width="2.5" />
+  </g>
+
+  <!-- Treehouse Cabin -->
+  <g id="cabin">
+    <!-- Cabin Main Wooden Body -->
+    <path d="M78 96 L222 96 L216 180 L84 180 Z" fill="url(#cabinWoodGrad)" stroke="#14100E" stroke-width="4" stroke-linejoin="round" />
+
+    <!-- Horizontal Plank Lines -->
+    <line x1="80" y1="118" x2="220" y2="118" stroke="#3D2514" stroke-width="3" />
+    <line x1="81" y1="138" x2="219" y2="138" stroke="#3D2514" stroke-width="3" />
+    <line x1="83" y1="158" x2="217" y2="158" stroke="#3D2514" stroke-width="3" />
+
+    <!-- Wooden Side Railing Posts -->
+    <rect x="58" y="152" width="7" height="30" fill="#7A502E" stroke="#14100E" stroke-width="3" />
+    <rect x="235" y="152" width="7" height="30" fill="#7A502E" stroke="#14100E" stroke-width="3" />
+    <path d="M55 156 L84 156 M216 156 L245 156" stroke="#8C5D38" stroke-width="5" stroke-linecap="round" />
+    <path d="M55 156 L84 156 M216 156 L245 156" stroke="#14100E" stroke-width="2" stroke-linecap="round" />
+
+    <!-- Doorway Opening (Above Rope Ladder) -->
+    <path d="M98 126 Q116 118 134 126 L134 180 L98 180 Z" fill="#120D0A" stroke="#3D2514" stroke-width="3.5" stroke-linejoin="round" />
+    <path d="M98 126 Q116 118 134 126 L134 180 L98 180 Z" fill="none" stroke="#14100E" stroke-width="3" stroke-linejoin="round" />
+    <!-- Rolled-up Burlap Curtain at top of doorway -->
+    <path d="M96 124 Q116 132 136 124 L134 134 Q116 140 98 134 Z" fill="#8C3A32" stroke="#14100E" stroke-width="2.5" />
+
+    <!-- Small Lookout Window on Right Side -->
+    <rect x="158" y="124" width="36" height="32" rx="4" fill="#171310" stroke="#14100E" stroke-width="3.5" />
+    <!-- Window Frame Bars -->
+    <line x1="176" y1="124" x2="176" y2="156" stroke="#8C5D38" stroke-width="3" />
+    <line x1="158" y1="140" x2="194" y2="140" stroke="#8C5D38" stroke-width="3" />
+    <!-- Outer Window Frame -->
+    <rect x="156" y="122" width="40" height="36" rx="5" fill="none" stroke="#57361D" stroke-width="3" />
+    <rect x="156" y="122" width="40" height="36" rx="5" fill="none" stroke="#14100E" stroke-width="2.5" />
+
+    <!-- Hidden Player Indicator Group (Can be toggled in React Native when child hides inside!) -->
+    <g id="hidden-player">
+      <!-- Subtle warm glow inside window -->
+      <rect x="160" y="126" width="32" height="28" fill="#F6AD55" opacity="0.22" />
+      <!-- Peeking Eyes inside dark doorway -->
+      <ellipse cx="111" cy="154" rx="4" ry="5" fill="#FFFFFF" stroke="#14100E" stroke-width="1.5" />
+      <circle cx="112" cy="154" r="2.2" fill="#1E1715" />
+      <circle cx="110.5" cy="152.5" r="1" fill="#FFFFFF" />
+
+      <ellipse cx="123" cy="154" rx="4" ry="5" fill="#FFFFFF" stroke="#14100E" stroke-width="1.5" />
+      <circle cx="122" cy="154" r="2.2" fill="#1E1715" />
+      <circle cx="120.5" cy="152.5" r="1" fill="#FFFFFF" />
+    </g>
+
+    <!-- Hanging Storm Lantern on Right Eave -->
+    <g id="lantern">
+      <path d="M218 118 L234 118 L230 130" fill="none" stroke="#14100E" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+      <rect x="224" y="130" width="12" height="16" rx="3" fill="#FFF380" stroke="#14100E" stroke-width="2.5" />
+      <path d="M221 130 L239 130 M221 146 L239 146" stroke="#2D3748" stroke-width="3.5" stroke-linecap="round" />
+      <circle cx="230" cy="138" r="26" fill="url(#warmLanternGlow)" />
+    </g>
+
+    <!-- Pitched Shingle Roof & Moss -->
+    <g id="roof">
+      <path d="M150 48 L60 108 L240 108 Z" fill="url(#roofGrad)" stroke="#14100E" stroke-width="4" stroke-linejoin="round" />
+      <!-- Shingle Texture Lines -->
+      <path d="M114 74 L186 74 M90 90 L210 90" stroke="#1A202C" stroke-width="3" stroke-linecap="round" />
+      <!-- Roof Fascia Boards -->
+      <path d="M150 44 L54 106 L62 114 L150 56 L238 114 L246 106 Z" fill="#6E4728" stroke="#14100E" stroke-width="3.5" stroke-linejoin="round" />
+      <!-- Moss Patch on Roof Slope -->
+      <path d="M84 92 Q104 84 114 96 Q102 106 78 102 Z" fill="#3B7561" stroke="#14100E" stroke-width="2.5" />
+    </g>
+  </g>
+
+  <!-- Top Tree Crown Foliage (Overlapping top of treehouse roof in 3/4 view) -->
+  <g id="foliage-top">
+    <path d="M82 54 C74 28, 114 10, 146 20 C176 8, 218 26, 212 54 C224 72, 198 88, 174 78 C150 88, 128 84, 112 76 C90 84, 72 70, 82 54 Z" fill="url(#thCanopyTop)" stroke="#14100E" stroke-width="4" stroke-linejoin="round" />
+    <!-- Moonlight Rim Highlight -->
+    <path d="M92 42 Q116 22 142 28" fill="none" stroke="#7ED4B4" stroke-width="3.5" stroke-linecap="round" opacity="0.6" />
+  </g>
+</svg>

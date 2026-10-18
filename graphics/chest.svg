@@ -1,0 +1,106 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <defs>
+    <!-- Chest Wood Gradients -->
+    <linearGradient id="chestWoodFront" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#8C5832" />
+      <stop offset="60%" stop-color="#6B4022" />
+      <stop offset="100%" stop-color="#472914" />
+    </linearGradient>
+    <linearGradient id="chestWoodLid" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#A86D40" />
+      <stop offset="55%" stop-color="#82502B" />
+      <stop offset="100%" stop-color="#5E381C" />
+    </linearGradient>
+    <!-- Iron Bands Gradient -->
+    <linearGradient id="chestIron" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#68727D" />
+      <stop offset="50%" stop-color="#434A52" />
+      <stop offset="100%" stop-color="#282C30" />
+    </linearGradient>
+    <!-- Brass Lock Gradient -->
+    <linearGradient id="chestBrass" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#F5CA5C" />
+      <stop offset="60%" stop-color="#C9962C" />
+      <stop offset="100%" stop-color="#8C6214" />
+    </linearGradient>
+    <!-- Golden Loot Glow inside Open Chest -->
+    <radialGradient id="chestLootGlow" cx="50%" cy="60%" r="55%">
+      <stop offset="0%" stop-color="#FFF59E" stop-opacity="0.95" />
+      <stop offset="50%" stop-color="#F6AD55" stop-opacity="0.45" />
+      <stop offset="100%" stop-color="#F6AD55" stop-opacity="0" />
+    </radialGradient>
+  </defs>
+
+  <!-- Ground Shadow (3/4 top-down) -->
+  <g id="shadow">
+    <ellipse cx="100" cy="166" rx="74" ry="20" fill="#06090F" opacity="0.65" />
+    <ellipse cx="100" cy="166" rx="56" ry="13" fill="#030508" opacity="0.5" />
+  </g>
+
+  <!-- OPEN LID STATE (Toggle visibility in code when chest is opened) -->
+  <g id="lid-open" opacity="0">
+    <!-- Open Lid Tilted Backwards -->
+    <path d="M40 52 C44 26, 156 26, 160 52 L166 92 L34 92 Z" fill="url(#chestWoodLid)" stroke="#17120F" stroke-width="4" stroke-linejoin="round" />
+    <!-- Inside Dark Cavity of Open Lid -->
+    <path d="M40 58 L160 58 L163 90 L37 90 Z" fill="#362011" stroke="#17120F" stroke-width="3" />
+    <!-- Iron Straps on Open Lid -->
+    <path d="M56 34 L62 90 L74 90 L68 34 Z" fill="url(#chestIron)" stroke="#17120F" stroke-width="3" />
+    <path d="M144 34 L138 90 L126 90 L132 34 Z" fill="url(#chestIron)" stroke="#17120F" stroke-width="3" />
+  </g>
+
+  <!-- Chest Lower Box Base -->
+  <g id="chest-base">
+    <!-- Interior Dark Hollow (visible when lid is open) -->
+    <path d="M34 92 L166 92 L158 112 L42 112 Z" fill="#1F1209" stroke="#17120F" stroke-width="3.5" />
+
+    <!-- Front & Side Box Walls -->
+    <path d="M34 92 L166 92 L158 158 Q100 166 42 158 Z" fill="url(#chestWoodFront)" stroke="#17120F" stroke-width="4" stroke-linejoin="round" />
+
+    <!-- Horizontal Plank Seams -->
+    <line x1="37" y1="115" x2="163" y2="115" stroke="#2E1B0D" stroke-width="3" />
+    <line x1="40" y1="138" x2="160" y2="138" stroke="#2E1B0D" stroke-width="3" />
+
+    <!-- Left & Right Iron Corner/Vertical Straps -->
+    <path d="M34 92 L50 92 L55 160 L42 158 Z" fill="url(#chestIron)" stroke="#17120F" stroke-width="3.5" stroke-linejoin="round" />
+    <path d="M166 92 L150 92 L145 160 L158 158 Z" fill="url(#chestIron)" stroke="#17120F" stroke-width="3.5" stroke-linejoin="round" />
+    <path d="M62 92 L74 92 L76 161 L65 160 Z" fill="url(#chestIron)" stroke="#17120F" stroke-width="3" stroke-linejoin="round" />
+    <path d="M138 92 L126 92 L124 161 L135 160 Z" fill="url(#chestIron)" stroke="#17120F" stroke-width="3" stroke-linejoin="round" />
+
+    <!-- Rivets on Base Iron Straps -->
+    <circle cx="43" cy="104" r="2.2" fill="#9AA5B1" />
+    <circle cx="46" cy="146" r="2.2" fill="#9AA5B1" />
+    <circle cx="157" cy="104" r="2.2" fill="#9AA5B1" />
+    <circle cx="154" cy="146" r="2.2" fill="#9AA5B1" />
+
+    <!-- Moss at bottom corner of chest in the forest -->
+    <path d="M38 156 Q56 146 66 158 Q54 166 36 162 Z" fill="#2E6B4E" stroke="#17120F" stroke-width="2.5" />
+  </g>
+
+  <!-- Loot Glow (Visible when open) -->
+  <g id="loot-glow" opacity="0">
+    <ellipse cx="100" cy="96" rx="58" ry="32" fill="url(#chestLootGlow)" />
+  </g>
+
+  <!-- CLOSED LID STATE (Default visible) -->
+  <g id="lid-closed">
+    <!-- Arched Wooden Lid (3/4 top-down view) -->
+    <path d="M32 96 C34 50, 166 50, 168 96 Q100 104 32 96 Z" fill="url(#chestWoodLid)" stroke="#17120F" stroke-width="4" stroke-linejoin="round" />
+    <!-- Wood Plank Lines on Lid -->
+    <path d="M38 76 Q100 82 162 76" fill="none" stroke="#472914" stroke-width="2.8" />
+    <!-- Moonlight Highlight on Lid Arch -->
+    <path d="M52 64 Q100 58 148 64" fill="none" stroke="#C98B5B" stroke-width="3" stroke-linecap="round" opacity="0.6" />
+
+    <!-- Iron Straps over Closed Lid -->
+    <path d="M32 96 C34 56, 48 56, 50 97 Z" fill="url(#chestIron)" stroke="#17120F" stroke-width="3.5" stroke-linejoin="round" />
+    <path d="M168 96 C166 56, 152 56, 150 97 Z" fill="url(#chestIron)" stroke="#17120F" stroke-width="3.5" stroke-linejoin="round" />
+    <path d="M61 98 C62 56, 75 56, 75 99 Z" fill="url(#chestIron)" stroke="#17120F" stroke-width="3" stroke-linejoin="round" />
+    <path d="M139 98 C138 56, 125 56, 125 99 Z" fill="url(#chestIron)" stroke="#17120F" stroke-width="3" stroke-linejoin="round" />
+  </g>
+
+  <!-- Center Brass Lock Plate & Keyhole -->
+  <g id="lock">
+    <path d="M88 86 L112 86 L110 118 Q100 126 90 118 Z" fill="url(#chestBrass)" stroke="#17120F" stroke-width="3.5" stroke-linejoin="round" />
+    <circle cx="100" cy="100" r="4" fill="#17120F" />
+    <path d="M98 102 L96 112 L104 112 L102 102 Z" fill="#17120F" />
+  </g>
+</svg>

@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 180" width="220" height="180">
+  <defs>
+    <!-- Bark Gradient -->
+    <linearGradient id="stumpBark" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#5E3E29" />
+      <stop offset="55%" stop-color="#3F2819" />
+      <stop offset="100%" stop-color="#24150C" />
+    </linearGradient>
+    <!-- Fresh Cut Wood Top Gradient -->
+    <radialGradient id="stumpCutTop" cx="45%" cy="45%" r="55%">
+      <stop offset="0%" stop-color="#E5C08D" />
+      <stop offset="70%" stop-color="#C79A63" />
+      <stop offset="100%" stop-color="#9E713F" />
+    </radialGradient>
+  </defs>
+
+  <!-- Ground Shadow -->
+  <g id="shadow">
+    <ellipse cx="110" cy="142" rx="84" ry="22" fill="#06090F" opacity="0.65" />
+    <ellipse cx="110" cy="142" rx="62" ry="15" fill="#030508" opacity="0.5" />
+  </g>
+
+  <!-- Scattered Fresh Wood Chips Around Stump -->
+  <g id="wood-chips">
+    <polygon points="36,138 48,132 52,140 38,144" fill="#D9B07C" stroke="#14100E" stroke-width="2" stroke-linejoin="round" />
+    <polygon points="62,152 76,148 72,156 58,157" fill="#C79A63" stroke="#14100E" stroke-width="2" stroke-linejoin="round" />
+    <polygon points="164,146 178,140 182,149 168,152" fill="#D9B07C" stroke="#14100E" stroke-width="2" stroke-linejoin="round" />
+    <polygon points="142,155 154,151 150,159" fill="#E5C08D" stroke="#14100E" stroke-width="2" stroke-linejoin="round" />
+  </g>
+
+  <!-- Stump Trunk & Flared Roots -->
+  <g id="stump-body">
+    <path d="M62 74 Q62 110 48 128 Q34 138 22 142 Q50 148 72 138 L82 148 Q110 154 138 148 L148 138 Q170 148 198 142 Q186 138 172 128 Q158 110 158 74 Z" fill="url(#stumpBark)" stroke="#14100E" stroke-width="4" stroke-linejoin="round" />
+
+    <!-- Bark Ridges -->
+    <path d="M76 92 Q74 118 62 136 M98 96 L94 144 M124 96 L128 144 M144 92 Q146 118 158 136" fill="none" stroke="#24150C" stroke-width="3" stroke-linecap="round" />
+
+    <!-- Deep V-Shaped Axe Wedge Cut on Right Side -->
+    <path d="M158 92 L134 102 L159 112 Z" fill="#C79A63" stroke="#14100E" stroke-width="3" stroke-linejoin="round" />
+    <line x1="134" y1="102" x2="158" y2="103" stroke="#7A5229" stroke-width="2" />
+
+    <!-- Moss Patch on Root -->
+    <path d="M52 134 Q68 124 80 136 Q68 144 48 140 Z" fill="#2E6B4E" stroke="#14100E" stroke-width="2.5" />
+  </g>
+
+  <!-- Cut Wood Top Surface (3/4 Top-Down Ellipse with Jagged Splinter Edge) -->
+  <g id="stump-top">
+    <path d="M62 74 C62 54, 158 54, 158 74 C158 94, 62 94, 62 74 Z" fill="url(#stumpCutTop)" stroke="#14100E" stroke-width="4" />
+    <!-- Jagged Splinters Standing Up on Left Edge -->
+    <path d="M64 72 L60 56 L70 66 L74 52 L82 65 L86 58 L92 67" fill="#D9B07C" stroke="#14100E" stroke-width="2.8" stroke-linejoin="round" />
+
+    <!-- Tree Growth Rings & Crack -->
+    <ellipse cx="112" cy="74" rx="34" ry="11" fill="none" stroke="#9E713F" stroke-width="2" />
+    <ellipse cx="112" cy="74" rx="22" ry="7" fill="none" stroke="#9E713F" stroke-width="2" />
+    <ellipse cx="112" cy="74" rx="9" ry="3" fill="none" stroke="#82582B" stroke-width="2" />
+    <path d="M112 74 L142 80 M112 74 L92 84" stroke="#6B441E" stroke-width="2.2" stroke-linecap="round" />
+  </g>
+</svg>

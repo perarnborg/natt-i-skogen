@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 240" width="200" height="240">
+  <defs>
+    <linearGradient id="signPostGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#6E492D" />
+      <stop offset="60%" stop-color="#4A2F1B" />
+      <stop offset="100%" stop-color="#2B1A0E" />
+    </linearGradient>
+    <linearGradient id="signBoardGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#9E6E46" />
+      <stop offset="65%" stop-color="#785030" />
+      <stop offset="100%" stop-color="#54361E" />
+    </linearGradient>
+  </defs>
+
+  <!-- Ground Shadow -->
+  <g id="shadow">
+    <ellipse cx="100" cy="212" rx="54" ry="15" fill="#06090F" opacity="0.65" />
+  </g>
+
+  <!-- Stones & Moss at Base of Post -->
+  <g id="base-stones">
+    <ellipse cx="82" cy="208" rx="16" ry="9" fill="#4A5560" stroke="#14100E" stroke-width="3" />
+    <ellipse cx="118" cy="210" rx="14" ry="8" fill="#3B444D" stroke="#14100E" stroke-width="3" />
+    <path d="M74 206 Q92 198 104 208 Z" fill="#2E6B4E" stroke="#14100E" stroke-width="2" />
+  </g>
+
+  <!-- Leaning Wooden Post -->
+  <g id="post" transform="rotate(-3 100 180)">
+    <path d="M90 42 L110 42 L114 210 L86 210 Z" fill="url(#signPostGrad)" stroke="#14100E" stroke-width="4" stroke-linejoin="round" />
+    <ellipse cx="100" cy="42" rx="10" ry="4" fill="#9E6E46" stroke="#14100E" stroke-width="3" />
+
+    <!-- Top Arrow Signboard (Pointing Right - Towards Safety/Exit) -->
+    <g id="sign-top">
+      <path d="M44 62 L152 56 L174 74 L152 92 L44 96 Z" fill="url(#signBoardGrad)" stroke="#14100E" stroke-width="4" stroke-linejoin="round" />
+      <line x1="52" y1="76" x2="156" y2="73" stroke="#3D2615" stroke-width="2.5" />
+      <!-- Carved Cabin/Home Symbol on Top Sign -->
+      <path d="M84 74 L96 64 L108 74 L104 74 L104 84 L88 84 L88 74 Z" fill="#E5C896" stroke="#14100E" stroke-width="2" stroke-linejoin="round" />
+    </g>
+
+    <!-- Lower Crooked Arrow Signboard (Pointing Left - Deep Forest / Danger) -->
+    <g id="sign-bottom" transform="rotate(8 100 124)">
+      <path d="M156 108 L48 108 L26 124 L48 140 L156 140 Z" fill="url(#signBoardGrad)" stroke="#14100E" stroke-width="4" stroke-linejoin="round" />
+      <line x1="46" y1="124" x2="148" y2="124" stroke="#3D2615" stroke-width="2.5" />
+      <!-- Center Nails -->
+      <circle cx="96" cy="118" r="2.2" fill="#24292E" />
+      <circle cx="104" cy="130" r="2.2" fill="#24292E" />
+    </g>
+  </g>
+</svg>

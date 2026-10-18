@@ -1,0 +1,123 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 340" width="280" height="340">
+  <defs>
+    <!-- Pine Trunk Bark Gradient -->
+    <linearGradient id="thpTrunkGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#593A27" />
+      <stop offset="55%" stop-color="#3D2618" />
+      <stop offset="100%" stop-color="#24150C" />
+    </linearGradient>
+
+    <!-- Pine Foliage Gradients -->
+    <linearGradient id="thpPineBottom" x1="20%" y1="0%" x2="80%" y2="100%">
+      <stop offset="0%" stop-color="#1E4B3B" />
+      <stop offset="60%" stop-color="#133328" />
+      <stop offset="100%" stop-color="#0B1F18" />
+    </linearGradient>
+
+    <linearGradient id="thpPineTop" x1="20%" y1="0%" x2="80%" y2="100%">
+      <stop offset="0%" stop-color="#3A8268" />
+      <stop offset="60%" stop-color="#235744" />
+      <stop offset="100%" stop-color="#14362A" />
+    </linearGradient>
+
+    <!-- Makeshift Wood Gradient -->
+    <linearGradient id="thpWoodGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#A67449" />
+      <stop offset="65%" stop-color="#825532" />
+      <stop offset="100%" stop-color="#5C3A1E" />
+    </linearGradient>
+
+    <!-- Red/Rust Patched Tarp Roof Gradient -->
+    <linearGradient id="tarpRoofGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#B84339" />
+      <stop offset="60%" stop-color="#8C2D25" />
+      <stop offset="100%" stop-color="#5E1B16" />
+    </linearGradient>
+  </defs>
+
+  <!-- Ground Shadow -->
+  <g id="shadow">
+    <ellipse cx="140" cy="304" rx="94" ry="24" fill="#06090F" opacity="0.65" />
+    <ellipse cx="140" cy="304" rx="68" ry="16" fill="#030508" opacity="0.55" />
+  </g>
+
+  <!-- Lower Pine Boughs (Behind Trunk & Hut) -->
+  <g id="foliage-lower">
+    <path d="M140 136 L34 228 Q56 244 84 230 Q106 250 140 248 Q174 250 196 230 Q224 244 246 228 Z" fill="url(#thpPineBottom)" stroke="#14100E" stroke-width="4" stroke-linejoin="round" />
+  </g>
+
+  <!-- Trunk & Nailed Climbing Slats -->
+  <g id="trunk">
+    <path d="M114 190 L106 274 Q94 294 74 302 Q98 308 118 296 L124 304 Q140 310 156 304 L162 296 Q182 308 206 302 Q186 294 174 274 L166 190 Z" fill="url(#thpTrunkGrad)" stroke="#14100E" stroke-width="4" stroke-linejoin="round" />
+
+    <!-- Bark Lines -->
+    <path d="M122 204 L118 286 M158 204 L162 286" stroke="#24150C" stroke-width="3" stroke-linecap="round" />
+
+    <!-- Nailed Climbing Planks Up the Trunk -->
+    <g id="climbing-steps">
+      <rect x="116" y="210" width="48" height="8" rx="2" transform="rotate(-4 140 214)" fill="#9C6B43" stroke="#14100E" stroke-width="2.8" />
+      <rect x="118" y="230" width="44" height="8" rx="2" transform="rotate(3 140 234)" fill="#9C6B43" stroke="#14100E" stroke-width="2.8" />
+      <rect x="115" y="250" width="50" height="8" rx="2" transform="rotate(-3 140 254)" fill="#9C6B43" stroke="#14100E" stroke-width="2.8" />
+      <rect x="117" y="270" width="46" height="8" rx="2" transform="rotate(4 140 274)" fill="#9C6B43" stroke="#14100E" stroke-width="2.8" />
+      <!-- Nail heads -->
+      <circle cx="123" cy="214" r="1.5" fill="#14100E" />
+      <circle cx="157" cy="212" r="1.5" fill="#14100E" />
+      <circle cx="125" cy="233" r="1.5" fill="#14100E" />
+      <circle cx="155" cy="235" r="1.5" fill="#14100E" />
+      <circle cx="123" cy="254" r="1.5" fill="#14100E" />
+      <circle cx="157" cy="252" r="1.5" fill="#14100E" />
+    </g>
+  </g>
+
+  <!-- Lookout Hut Built Into Pine Tree -->
+  <g id="cabin">
+    <!-- Diagonal Support Logs -->
+    <path d="M116 226 L78 190 L90 186 L120 214 Z" fill="#6E4728" stroke="#14100E" stroke-width="3.5" stroke-linejoin="round" />
+    <path d="M164 226 L202 190 L190 186 L160 214 Z" fill="#6E4728" stroke="#14100E" stroke-width="3.5" stroke-linejoin="round" />
+
+    <!-- Wooden Deck Platform -->
+    <path d="M68 180 L212 180 L222 194 L58 194 Z" fill="#7A502E" stroke="#14100E" stroke-width="4" stroke-linejoin="round" />
+
+    <!-- Makeshift Vertical Plank Walls -->
+    <path d="M82 114 L198 114 L194 186 L86 186 Z" fill="url(#thpWoodGrad)" stroke="#14100E" stroke-width="4" stroke-linejoin="round" />
+    <!-- Vertical Plank Seams -->
+    <line x1="106" y1="114" x2="108" y2="186" stroke="#3D2514" stroke-width="2.8" />
+    <line x1="130" y1="114" x2="130" y2="186" stroke="#3D2514" stroke-width="2.8" />
+    <line x1="152" y1="114" x2="152" y2="186" stroke="#3D2514" stroke-width="2.8" />
+    <line x1="174" y1="114" x2="172" y2="186" stroke="#3D2514" stroke-width="2.8" />
+
+    <!-- Wide Horizontal Lookout Slot / Hatch -->
+    <rect x="102" y="132" width="76" height="28" rx="4" fill="#120D0A" stroke="#14100E" stroke-width="3.5" />
+    <!-- Propped-open wooden shutter above slot -->
+    <path d="M98 126 L182 126 L186 136 L94 136 Z" fill="#6E4728" stroke="#14100E" stroke-width="3" stroke-linejoin="round" />
+
+    <!-- Hidden Player Peeking Eyes in Lookout Slot -->
+    <g id="hidden-player">
+      <ellipse cx="133" cy="147" rx="4.2" ry="5.2" fill="#FFFFFF" stroke="#14100E" stroke-width="1.5" />
+      <circle cx="134" cy="147" r="2.4" fill="#1E1715" />
+      <circle cx="132.5" cy="145.5" r="1.1" fill="#FFFFFF" />
+
+      <ellipse cx="147" cy="147" rx="4.2" ry="5.2" fill="#FFFFFF" stroke="#14100E" stroke-width="1.5" />
+      <circle cx="146" cy="147" r="2.4" fill="#1E1715" />
+      <circle cx="144.5" cy="145.5" r="1.1" fill="#FFFFFF" />
+    </g>
+
+    <!-- Front Wooden Porch Fence / Railing -->
+    <rect x="68" y="164" width="6" height="24" fill="#8C5D38" stroke="#14100E" stroke-width="2.5" />
+    <rect x="206" y="164" width="6" height="24" fill="#8C5D38" stroke="#14100E" stroke-width="2.5" />
+    <rect x="64" y="168" width="152" height="7" rx="2" fill="#9C6B43" stroke="#14100E" stroke-width="3" />
+
+    <!-- Slanted Tarp & Plank Roof -->
+    <path d="M68 106 L212 96 L220 122 L62 128 Z" fill="url(#tarpRoofGrad)" stroke="#14100E" stroke-width="4" stroke-linejoin="round" />
+    <!-- Yellow Patch Stitched on Tarp Roof -->
+    <rect x="156" y="102" width="26" height="14" rx="2" transform="rotate(-4 169 109)" fill="#D99429" stroke="#14100E" stroke-width="2.5" />
+  </g>
+
+  <!-- Upper Pine Crown Emerging Above the Treehouse -->
+  <g id="foliage-top">
+    <path d="M140 48 L66 112 Q88 124 110 112 Q126 126 140 124 Q154 126 170 112 Q192 124 214 112 Z" fill="url(#thpPineTop)" stroke="#14100E" stroke-width="4" stroke-linejoin="round" />
+    <path d="M140 16 L86 78 Q104 90 120 80 Q140 94 160 80 Q176 90 194 78 Z" fill="#46997B" stroke="#14100E" stroke-width="4" stroke-linejoin="round" />
+    <!-- Moonlight Rim Highlight -->
+    <path d="M140 22 L94 74" fill="none" stroke="#85DEC0" stroke-width="3.5" stroke-linecap="round" opacity="0.65" />
+  </g>
+</svg>

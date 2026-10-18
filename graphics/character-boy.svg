@@ -1,0 +1,161 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 240" width="200" height="240">
+  <defs>
+    <linearGradient id="boyJacketGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#E05A36" />
+      <stop offset="65%" stop-color="#C44121" />
+      <stop offset="100%" stop-color="#962D14" />
+    </linearGradient>
+    <linearGradient id="boyHatGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#3B7A8C" />
+      <stop offset="100%" stop-color="#23505E" />
+    </linearGradient>
+    <linearGradient id="boyHairGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#E5B55C" />
+      <stop offset="100%" stop-color="#B8862D" />
+    </linearGradient>
+    <linearGradient id="boySkinGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#FAD4B8" />
+      <stop offset="100%" stop-color="#E8B490" />
+    </linearGradient>
+    <radialGradient id="boyFlashlightGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#FFF6A9" stop-opacity="0.95" />
+      <stop offset="50%" stop-color="#FFE066" stop-opacity="0.4" />
+      <stop offset="100%" stop-color="#FFE066" stop-opacity="0" />
+    </radialGradient>
+  </defs>
+
+  <!-- Ground Shadow (3/4 top-down perspective) -->
+  <g id="shadow">
+    <ellipse cx="100" cy="212" rx="46" ry="16" fill="#090D16" opacity="0.55" />
+    <ellipse cx="100" cy="212" rx="34" ry="11" fill="#05070C" opacity="0.45" />
+  </g>
+
+  <!-- Backpack (peeking out from behind shoulders) -->
+  <g id="backpack">
+    <rect x="58" y="106" width="84" height="60" rx="16" fill="#4A5D4E" stroke="#1E1715" stroke-width="4" />
+    <!-- Leather straps on backpack -->
+    <rect x="68" y="106" width="8" height="54" fill="#7A4928" stroke="#1E1715" stroke-width="2.5" />
+    <rect x="124" y="106" width="8" height="54" fill="#7A4928" stroke="#1E1715" stroke-width="2.5" />
+  </g>
+
+  <!-- Legs & Hiking Boots -->
+  <g id="legs">
+    <!-- Left Leg -->
+    <path d="M75 166 L74 191 L94 191 L94 166 Z" fill="#3B493F" stroke="#1E1715" stroke-width="4" stroke-linejoin="round" />
+    <!-- Right Leg -->
+    <path d="M106 166 L106 191 L126 191 L125 166 Z" fill="#3B493F" stroke="#1E1715" stroke-width="4" stroke-linejoin="round" />
+
+    <!-- Left Hiking Boot -->
+    <path d="M71 187 L95 187 L95 208 Q95 214 82 214 L69 214 Q64 214 65 206 L69 194 Z" fill="#6E4427" stroke="#1E1715" stroke-width="4" stroke-linejoin="round" />
+    <line x1="74" y1="193" x2="88" y2="193" stroke="#F5B82E" stroke-width="2.8" stroke-linecap="round" />
+    <line x1="73" y1="199" x2="88" y2="199" stroke="#F5B82E" stroke-width="2.8" stroke-linecap="round" />
+    <path d="M65 210 L95 210" stroke="#362011" stroke-width="3.5" stroke-linecap="round" />
+
+    <!-- Right Hiking Boot -->
+    <path d="M105 187 L129 187 L131 194 L135 206 Q136 214 131 214 L118 214 Q105 214 105 208 Z" fill="#6E4427" stroke="#1E1715" stroke-width="4" stroke-linejoin="round" />
+    <line x1="112" y1="193" x2="126" y2="193" stroke="#F5B82E" stroke-width="2.8" stroke-linecap="round" />
+    <line x1="112" y1="199" x2="127" y2="199" stroke="#F5B82E" stroke-width="2.8" stroke-linecap="round" />
+    <path d="M105 210 L135 210" stroke="#362011" stroke-width="3.5" stroke-linecap="round" />
+  </g>
+
+  <!-- Torso: Rust-Orange Forest Parka -->
+  <g id="torso">
+    <path d="M66 118 Q62 146 61 172 Q100 181 139 172 Q138 146 134 118 Z" fill="url(#boyJacketGrad)" stroke="#1E1715" stroke-width="4" stroke-linejoin="round" />
+    <!-- Quilted horizontal seams -->
+    <path d="M64 142 Q100 150 136 142" fill="none" stroke="#8F2A12" stroke-width="2.5" />
+    <path d="M62 158 Q100 166 138 158" fill="none" stroke="#8F2A12" stroke-width="2.5" />
+    <!-- Center zipper line -->
+    <line x1="100" y1="126" x2="100" y2="176" stroke="#1E1715" stroke-width="3.5" />
+    <!-- Ribbed hem -->
+    <path d="M62 167 Q100 176 138 167 L139 173 Q100 182 61 173 Z" fill="#2A363B" stroke="#1E1715" stroke-width="3" stroke-linejoin="round" />
+  </g>
+
+  <!-- Left Arm & Hand -->
+  <g id="arm-left">
+    <path d="M67 122 Q50 135 48 157 Q55 163 63 159 Q67 145 73 132 Z" fill="url(#boyJacketGrad)" stroke="#1E1715" stroke-width="4" stroke-linejoin="round" />
+    <!-- Dark Blue Glove -->
+    <circle cx="54" cy="160" r="7.5" fill="#23505E" stroke="#1E1715" stroke-width="3.5" />
+  </g>
+
+  <!-- Right Arm & Flashlight -->
+  <g id="arm-right">
+    <path d="M133 122 Q150 135 152 155 Q145 161 137 157 Q133 145 127 132 Z" fill="url(#boyJacketGrad)" stroke="#1E1715" stroke-width="4" stroke-linejoin="round" />
+    <!-- Dark Blue Glove -->
+    <circle cx="146" cy="157" r="7.5" fill="#23505E" stroke="#1E1715" stroke-width="3.5" />
+    <!-- Flashlight held forward-right -->
+    <g id="flashlight">
+      <rect x="140" y="151" width="18" height="10" rx="3" transform="rotate(25 149 156)" fill="#4A5568" stroke="#1E1715" stroke-width="3" />
+      <ellipse cx="157" cy="160" rx="4" ry="6" transform="rotate(25 157 160)" fill="#FFF380" stroke="#1E1715" stroke-width="2.5" />
+      <circle cx="161" cy="163" r="18" fill="url(#boyFlashlightGlow)" />
+    </g>
+  </g>
+
+  <!-- Fluffy Sherpa Fleece Collar -->
+  <g id="collar">
+    <path d="M64 114 Q72 132 100 133 Q128 132 136 114 Q141 124 131 133 Q100 144 69 133 Q59 124 64 114 Z" fill="#FFF6E5" stroke="#1E1715" stroke-width="4" stroke-linejoin="round" />
+    <path d="M82 128 Q90 134 97 129" fill="none" stroke="#D9CBB3" stroke-width="2.5" stroke-linecap="round" />
+    <path d="M103 129 Q110 134 118 128" fill="none" stroke="#D9CBB3" stroke-width="2.5" stroke-linecap="round" />
+  </g>
+
+  <!-- Head (3/4 top-down proportion) -->
+  <g id="head">
+    <!-- Ears -->
+    <circle cx="55" cy="88" r="8.5" fill="url(#boySkinGrad)" stroke="#1E1715" stroke-width="3.5" />
+    <circle cx="145" cy="88" r="8.5" fill="url(#boySkinGrad)" stroke="#1E1715" stroke-width="3.5" />
+
+    <!-- Head base -->
+    <rect x="57" y="42" width="86" height="78" rx="40" fill="url(#boySkinGrad)" stroke="#1E1715" stroke-width="4" />
+
+    <!-- Rosy Cheeks -->
+    <ellipse cx="72" cy="100" rx="8" ry="5" fill="#E87A74" opacity="0.5" />
+    <ellipse cx="128" cy="100" rx="8" ry="5" fill="#E87A74" opacity="0.5" />
+
+    <!-- Little Band-Aid on Left Cheek (adventurous kid detail) -->
+    <rect x="65" y="96" width="14" height="6" rx="2.5" transform="rotate(-18 72 99)" fill="#F2C19E" stroke="#1E1715" stroke-width="2" />
+    <line x1="70" y1="95" x2="72" y2="101" stroke="#C98F6B" stroke-width="1.5" />
+    <line x1="73" y1="94" x2="75" y2="100" stroke="#C98F6B" stroke-width="1.5" />
+
+    <!-- Face / Expressive Eyes -->
+    <g id="face">
+      <!-- Left Eye -->
+      <ellipse cx="81" cy="89" rx="7.5" ry="9" fill="#FFFFFF" stroke="#1E1715" stroke-width="3" />
+      <ellipse cx="82" cy="90" rx="4.8" ry="6" fill="#1E3B4B" />
+      <circle cx="79.5" cy="86.5" r="2.2" fill="#FFFFFF" />
+      <circle cx="84" cy="92.5" r="1.1" fill="#FFFFFF" />
+
+      <!-- Right Eye -->
+      <ellipse cx="119" cy="89" rx="7.5" ry="9" fill="#FFFFFF" stroke="#1E1715" stroke-width="3" />
+      <ellipse cx="118" cy="90" rx="4.8" ry="6" fill="#1E3B4B" />
+      <circle cx="116.5" cy="86.5" r="2.2" fill="#FFFFFF" />
+      <circle cx="121" cy="92.5" r="1.1" fill="#FFFFFF" />
+
+      <!-- Eyebrows (focused & alert) -->
+      <path d="M71 76 L88 79" fill="none" stroke="#8C621C" stroke-width="3.5" stroke-linecap="round" />
+      <path d="M129 76 L112 79" fill="none" stroke="#8C621C" stroke-width="3.5" stroke-linecap="round" />
+
+      <!-- Nose -->
+      <path d="M98 95 Q100 98 102 95" fill="none" stroke="#C48B68" stroke-width="2.8" stroke-linecap="round" />
+
+      <!-- Mouth (determined expression) -->
+      <path d="M94 106 Q100 104 106 106" fill="none" stroke="#1E1715" stroke-width="2.8" stroke-linecap="round" />
+    </g>
+
+    <!-- Tousled Blonde/Light-Brown Hair Tufts peeking under beanie -->
+    <g id="hair-front">
+      <path d="M55 78 L48 70 L59 66 L68 78 L78 65 L91 77 L102 63 L112 75 L127 65 L133 77 L148 71 L143 80 C135 68, 65 68, 55 78 Z" fill="url(#boyHairGrad)" stroke="#1E1715" stroke-width="3.5" stroke-linejoin="round" />
+    </g>
+
+    <!-- Slouchy Teal/Forest-Blue Knit Cap with side tail (distinctive 3/4 silhouette) -->
+    <g id="hat">
+      <!-- Drooping tail of the cap on the left side -->
+      <path d="M62 42 Q34 45 28 68 Q40 75 56 64 Z" fill="#23505E" stroke="#1E1715" stroke-width="4" stroke-linejoin="round" />
+      <circle cx="26" cy="70" r="9.5" fill="#F5B82E" stroke="#1E1715" stroke-width="3.5" />
+
+      <!-- Main beanie dome -->
+      <path d="M55 66 C52 26, 148 26, 145 66 Z" fill="url(#boyHatGrad)" stroke="#1E1715" stroke-width="4" stroke-linejoin="round" />
+      <!-- Folded cuff with yellow stripe -->
+      <path d="M52 62 Q100 50 148 62 L146 74 Q100 62 54 74 Z" fill="#2D6475" stroke="#1E1715" stroke-width="4" stroke-linejoin="round" />
+      <path d="M53 68 Q100 56 147 68" fill="none" stroke="#F5B82E" stroke-width="3" />
+    </g>
+  </g>
+</svg>

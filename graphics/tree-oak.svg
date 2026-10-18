@@ -1,0 +1,84 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 310" width="280" height="310">
+  <defs>
+    <!-- Gnarled Bark Gradient -->
+    <linearGradient id="oakTrunkGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#61422D" />
+      <stop offset="50%" stop-color="#452D1E" />
+      <stop offset="100%" stop-color="#291A10" />
+    </linearGradient>
+
+    <!-- Canopy Gradients (Night Forest Teal/Olive Foliage) -->
+    <radialGradient id="oakCanopyBack" cx="40%" cy="35%" r="65%">
+      <stop offset="0%" stop-color="#244B3E" />
+      <stop offset="70%" stop-color="#152E26" />
+      <stop offset="100%" stop-color="#0B1B16" />
+    </radialGradient>
+
+    <radialGradient id="oakCanopyMid" cx="38%" cy="30%" r="65%">
+      <stop offset="0%" stop-color="#316351" />
+      <stop offset="65%" stop-color="#1E4034" />
+      <stop offset="100%" stop-color="#11261F" />
+    </radialGradient>
+
+    <radialGradient id="oakCanopyTop" cx="35%" cy="25%" r="65%">
+      <stop offset="0%" stop-color="#44826B" />
+      <stop offset="65%" stop-color="#285444" />
+      <stop offset="100%" stop-color="#173329" />
+    </radialGradient>
+  </defs>
+
+  <!-- Ground Shadow (3/4 top-down) -->
+  <g id="shadow">
+    <ellipse cx="140" cy="276" rx="96" ry="25" fill="#06090F" opacity="0.65" />
+    <ellipse cx="140" cy="276" rx="70" ry="17" fill="#030508" opacity="0.55" />
+  </g>
+
+  <!-- Gnarled Trunk, Roots, Hollow & Mushrooms -->
+  <g id="trunk">
+    <!-- Thick Spreading Branches behind/under canopy -->
+    <path d="M112 180 L64 134 L82 122 L124 162 Z" fill="url(#oakTrunkGrad)" stroke="#14100E" stroke-width="4" stroke-linejoin="round" />
+    <path d="M168 180 L218 132 L200 120 L156 162 Z" fill="url(#oakTrunkGrad)" stroke="#14100E" stroke-width="4" stroke-linejoin="round" />
+
+    <!-- Main Gnarled Trunk & Twisting Roots -->
+    <path d="M104 156 Q106 210 92 248 Q76 266 56 274 Q84 282 108 268 L118 280 Q140 286 162 280 L172 268 Q196 282 224 274 Q204 266 188 248 Q174 210 176 156 Z" fill="url(#oakTrunkGrad)" stroke="#14100E" stroke-width="4" stroke-linejoin="round" />
+
+    <!-- Dark Tree Hollow in Center of Trunk -->
+    <ellipse cx="140" cy="218" rx="14" ry="22" fill="#120B07" stroke="#291A10" stroke-width="4" />
+    <ellipse cx="140" cy="218" rx="14" ry="22" fill="none" stroke="#14100E" stroke-width="3" />
+
+    <!-- Swirling Bark Lines -->
+    <path d="M112 178 Q118 215 104 256" fill="none" stroke="#24150C" stroke-width="3" stroke-linecap="round" />
+    <path d="M168 182 Q162 218 174 256" fill="none" stroke="#24150C" stroke-width="3" stroke-linecap="round" />
+    <path d="M132 246 L128 274 M148 248 L152 274" fill="none" stroke="#24150C" stroke-width="3" stroke-linecap="round" />
+
+    <!-- Moss & Glowing Little Forest Mushrooms at Root Base -->
+    <path d="M76 268 Q94 258 106 270 Q94 278 76 274 Z" fill="#2E6B4E" stroke="#14100E" stroke-width="2.5" />
+    <g id="mushrooms">
+      <!-- Mushroom 1 -->
+      <path d="M181 268 L181 276 L187 276 L187 268 Z" fill="#E6D5B8" stroke="#14100E" stroke-width="2" />
+      <path d="M174 269 Q184 256 194 269 Z" fill="#D9534F" stroke="#14100E" stroke-width="2.5" stroke-linejoin="round" />
+      <circle cx="182" cy="264" r="1.5" fill="#FFF8E7" />
+      <circle cx="187" cy="266" r="1.2" fill="#FFF8E7" />
+      <!-- Mushroom 2 -->
+      <path d="M195 271 L195 277 L199 277 L199 271 Z" fill="#E6D5B8" stroke="#14100E" stroke-width="2" />
+      <path d="M190 272 Q197 263 204 272 Z" fill="#D9534F" stroke="#14100E" stroke-width="2.2" stroke-linejoin="round" />
+    </g>
+  </g>
+
+  <!-- Layered Leafy Canopy (3/4 Top-Down Volume) -->
+  <g id="foliage">
+    <!-- Back Dark Foliage Cluster -->
+    <path d="M44 136 C20 110, 38 64, 76 62 C92 32, 148 26, 174 48 C214 42, 254 78, 238 124 C252 152, 222 182, 186 172 C156 188, 114 188, 86 172 C52 180, 28 158, 44 136 Z" fill="url(#oakCanopyBack)" stroke="#14100E" stroke-width="4" stroke-linejoin="round" />
+
+    <!-- Mid Foliage Clusters -->
+    <path d="M56 118 C40 90, 66 54, 102 58 C122 34, 172 36, 190 64 C222 68, 236 106, 212 132 C194 156, 158 158, 136 148 C108 160, 68 148, 56 118 Z" fill="url(#oakCanopyMid)" stroke="#14100E" stroke-width="4" stroke-linejoin="round" />
+
+    <!-- Top Crown Highlight Cluster (viewed from above) -->
+    <path d="M82 94 C72 68, 102 44, 132 52 C154 38, 190 56, 184 86 C198 106, 174 132, 146 124 C122 136, 84 122, 82 94 Z" fill="url(#oakCanopyTop)" stroke="#14100E" stroke-width="3.5" stroke-linejoin="round" />
+
+    <!-- Moonlight Rim Highlights & Leaf Texture Arcs -->
+    <path d="M88 68 Q108 50 130 58" fill="none" stroke="#7ED4B4" stroke-width="3" stroke-linecap="round" opacity="0.55" />
+    <path d="M54 96 Q68 74 92 74" fill="none" stroke="#62B597" stroke-width="3" stroke-linecap="round" opacity="0.45" />
+    <path d="M116 104 Q136 116 156 102" fill="none" stroke="#132B23" stroke-width="3" stroke-linecap="round" />
+  </g>
+</svg>

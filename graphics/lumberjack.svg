@@ -1,0 +1,316 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 280" width="260" height="280">
+  <defs>
+    <!-- Red & Black Buffalo Plaid Flannel Pattern -->
+    <pattern id="flannelPlaid" width="20" height="20" patternUnits="userSpaceOnUse" patternTransform="rotate(-8)">
+      <rect width="20" height="20" fill="#9E241E" />
+      <rect x="0" y="0" width="20" height="10" fill="#5E1210" opacity="0.65" />
+      <rect x="0" y="0" width="10" height="20" fill="#5E1210" opacity="0.65" />
+      <rect x="0" y="0" width="10" height="10" fill="#1E1414" opacity="0.85" />
+      <line x1="0" y1="5" x2="20" y2="5" stroke="#B8322B" stroke-width="1" opacity="0.5" />
+      <line x1="5" y1="0" x2="5" y2="20" stroke="#B8322B" stroke-width="1" opacity="0.5" />
+    </pattern>
+
+    <!-- Shading Overlay for Torso Volume -->
+    <linearGradient id="torsoShade" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.08" />
+      <stop offset="60%" stop-color="#000000" stop-opacity="0.15" />
+      <stop offset="100%" stop-color="#000000" stop-opacity="0.45" />
+    </linearGradient>
+
+    <!-- Skin & Muscle Gradients -->
+    <linearGradient id="lumberSkin" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#E2A482" />
+      <stop offset="65%" stop-color="#C9825E" />
+      <stop offset="100%" stop-color="#9E5B3C" />
+    </linearGradient>
+
+    <!-- Dirty Undershirt Gradient -->
+    <linearGradient id="undershirtGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#C8B9A6" />
+      <stop offset="100%" stop-color="#8C7D6B" />
+    </linearGradient>
+
+    <!-- Worn Olive Work Pants Gradient -->
+    <linearGradient id="pantsGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#57533E" />
+      <stop offset="70%" stop-color="#423E2D" />
+      <stop offset="100%" stop-color="#2D2A1E" />
+    </linearGradient>
+
+    <!-- Leather Gradient -->
+    <linearGradient id="leatherGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#784B2A" />
+      <stop offset="100%" stop-color="#472A14" />
+    </linearGradient>
+
+    <!-- Wild Hair & Beard Gradients -->
+    <linearGradient id="beardGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#4A3325" />
+      <stop offset="60%" stop-color="#362419" />
+      <stop offset="100%" stop-color="#241710" />
+    </linearGradient>
+
+    <!-- Axe Steel Blade Gradient -->
+    <linearGradient id="axeBladeGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#BCC4CC" />
+      <stop offset="45%" stop-color="#788088" />
+      <stop offset="100%" stop-color="#3F444A" />
+    </linearGradient>
+
+    <!-- Wood Handle Gradient -->
+    <linearGradient id="axeWoodGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#9E6B43" />
+      <stop offset="50%" stop-color="#784C2B" />
+      <stop offset="100%" stop-color="#4F3019" />
+    </linearGradient>
+  </defs>
+
+  <!-- Ground Shadow (large, imposing 3/4 top-down shadow) -->
+  <g id="shadow">
+    <ellipse cx="135" cy="252" rx="74" ry="20" fill="#070A10" opacity="0.65" />
+    <ellipse cx="135" cy="252" rx="54" ry="14" fill="#04060A" opacity="0.55" />
+  </g>
+
+  <!-- Muscular Stance: Torn Olive Work Pants & Heavy Boots -->
+  <g id="legs">
+    <!-- Pants Base (Wide Aggressive Stance) -->
+    <path d="M88 176 L72 224 L112 226 L128 194 L138 194 L152 226 L192 224 L178 176 Z" fill="url(#pantsGrad)" stroke="#1A1311" stroke-width="4" stroke-linejoin="round" />
+
+    <!-- Cargo Pocket on Right Leg (viewer's left) -->
+    <path d="M77 194 L94 198 L91 214 L73 210 Z" fill="#464231" stroke="#1A1311" stroke-width="2.5" stroke-linejoin="round" />
+
+    <!-- Rips & Tears on Right Thigh/Knee (viewer's left) -->
+    <ellipse cx="102" cy="193" rx="8" ry="3.5" transform="rotate(-10 102 193)" fill="#9E5B3C" stroke="#1A1311" stroke-width="2.2" />
+    <path d="M95 198 Q103 206 100 214" fill="none" stroke="#7A1C18" stroke-width="3" stroke-linecap="round" opacity="0.8" />
+    <ellipse cx="97" cy="211" rx="9" ry="4" transform="rotate(8 97 211)" fill="#B57556" stroke="#1A1311" stroke-width="2.5" />
+    <line x1="91" y1="210" x2="103" y2="212" stroke="#D9CBB8" stroke-width="1.2" />
+
+    <!-- Stitched Dark Brown Patch on Left Knee (viewer's right) -->
+    <rect x="155" y="198" width="22" height="20" rx="3" transform="rotate(-6 166 208)" fill="#4D3122" stroke="#1A1311" stroke-width="2.8" />
+    <!-- Patch stitch marks -->
+    <line x1="153" y1="201" x2="158" y2="201" stroke="#C8B9A6" stroke-width="1.8" stroke-linecap="round" />
+    <line x1="153" y1="207" x2="158" y2="207" stroke="#C8B9A6" stroke-width="1.8" stroke-linecap="round" />
+    <line x1="154" y1="213" x2="159" y2="213" stroke="#C8B9A6" stroke-width="1.8" stroke-linecap="round" />
+    <line x1="174" y1="199" x2="179" y2="199" stroke="#C8B9A6" stroke-width="1.8" stroke-linecap="round" />
+    <line x1="175" y1="205" x2="180" y2="205" stroke="#C8B9A6" stroke-width="1.8" stroke-linecap="round" />
+    <line x1="176" y1="211" x2="181" y2="211" stroke="#C8B9A6" stroke-width="1.8" stroke-linecap="round" />
+    <!-- Blood/mud splatter on left thigh -->
+    <circle cx="162" cy="191" r="4" fill="#6E1916" opacity="0.8" />
+    <circle cx="168" cy="194" r="2.5" fill="#6E1916" opacity="0.8" />
+
+    <!-- Left Boot (viewer's left) -->
+    <g id="boot-left">
+      <path d="M72 220 L108 222 L107 248 Q107 256 86 256 L66 256 Q56 256 59 245 L67 232 Z" fill="#593A22" stroke="#1A1311" stroke-width="4" stroke-linejoin="round" />
+      <!-- Boot Toe Cap -->
+      <path d="M59 245 Q66 235 88 238 L92 254 L62 254 Z" fill="#6E492C" stroke="#1A1311" stroke-width="2.5" />
+      <!-- Boot Laces -->
+      <line x1="78" y1="226" x2="96" y2="227" stroke="#2B1A0E" stroke-width="3" stroke-linecap="round" />
+      <line x1="76" y1="232" x2="94" y2="233" stroke="#2B1A0E" stroke-width="3" stroke-linecap="round" />
+      <line x1="74" y1="238" x2="92" y2="239" stroke="#2B1A0E" stroke-width="3" stroke-linecap="round" />
+      <!-- Heavy Lugged Sole -->
+      <path d="M57 253 L108 253 L108 259 L57 259 Z" fill="#26180F" stroke="#1A1311" stroke-width="2.5" stroke-linejoin="round" />
+      <line x1="68" y1="255" x2="68" y2="260" stroke="#1A1311" stroke-width="3" />
+      <line x1="80" y1="255" x2="80" y2="260" stroke="#1A1311" stroke-width="3" />
+      <line x1="92" y1="255" x2="92" y2="260" stroke="#1A1311" stroke-width="3" />
+    </g>
+
+    <!-- Right Boot (viewer's right) -->
+    <g id="boot-right">
+      <path d="M156 222 L192 220 L198 232 L208 244 Q212 256 200 256 L174 256 Q156 256 156 248 Z" fill="#593A22" stroke="#1A1311" stroke-width="4" stroke-linejoin="round" />
+      <!-- Boot Toe Cap -->
+      <path d="M208 244 Q200 234 178 238 L175 254 L205 254 Z" fill="#6E492C" stroke="#1A1311" stroke-width="2.5" />
+      <!-- Boot Laces -->
+      <line x1="168" y1="227" x2="186" y2="226" stroke="#2B1A0E" stroke-width="3" stroke-linecap="round" />
+      <line x1="170" y1="233" x2="188" y2="232" stroke="#2B1A0E" stroke-width="3" stroke-linecap="round" />
+      <line x1="172" y1="239" x2="190" y2="238" stroke="#2B1A0E" stroke-width="3" stroke-linecap="round" />
+      <!-- Heavy Lugged Sole -->
+      <path d="M156 253 L209 253 L209 259 L156 259 Z" fill="#26180F" stroke="#1A1311" stroke-width="2.5" stroke-linejoin="round" />
+      <line x1="170" y1="255" x2="170" y2="260" stroke="#1A1311" stroke-width="3" />
+      <line x1="184" y1="255" x2="184" y2="260" stroke="#1A1311" stroke-width="3" />
+      <line x1="198" y1="255" x2="198" y2="260" stroke="#1A1311" stroke-width="3" />
+    </g>
+  </g>
+
+  <!-- Broad Hulking Torso: Buffalo Plaid Flannel & Dirty Henley Undershirt -->
+  <g id="torso">
+    <!-- Main Broad Shoulders & Chest -->
+    <path d="M56 102 C64 80, 196 80, 204 102 L184 180 Q133 190 84 180 Z" fill="url(#flannelPlaid)" stroke="#1A1311" stroke-width="4" stroke-linejoin="round" />
+    <path d="M56 102 C64 80, 196 80, 204 102 L184 180 Q133 190 84 180 Z" fill="url(#torsoShade)" />
+
+    <!-- Dirty Henley Undershirt V-Neck Insert -->
+    <path d="M110 100 L133 178 L156 100 Q133 108 110 100 Z" fill="url(#undershirtGrad)" stroke="#1A1311" stroke-width="3.5" stroke-linejoin="round" />
+    <!-- Chest V-Opening Skin & Chest Hair -->
+    <path d="M118 100 L133 130 L148 100 Z" fill="url(#lumberSkin)" stroke="#1A1311" stroke-width="3" stroke-linejoin="round" />
+    <path d="M128 109 Q133 115 138 109 M130 116 Q133 121 136 116" fill="none" stroke="#3D271B" stroke-width="2" stroke-linecap="round" />
+    <!-- Undershirt buttons & blood splatters -->
+    <circle cx="133" cy="138" r="2.2" fill="#3B2F26" />
+    <circle cx="133" cy="150" r="2.2" fill="#3B2F26" />
+    <circle cx="141" cy="146" r="4.5" fill="#7A1C18" opacity="0.8" />
+    <circle cx="136" cy="160" r="6" fill="#7A1C18" opacity="0.75" />
+    <circle cx="127" cy="155" r="2.5" fill="#7A1C18" opacity="0.8" />
+
+    <!-- Open Flannel Collar Flaps -->
+    <path d="M96 90 L118 124 L104 132 L86 102 Z" fill="#8C1D18" stroke="#1A1311" stroke-width="3.5" stroke-linejoin="round" />
+    <path d="M170 90 L148 124 L162 132 L180 102 Z" fill="#8C1D18" stroke="#1A1311" stroke-width="3.5" stroke-linejoin="round" />
+  </g>
+
+  <!-- Heavy Leather Suspenders, Belt, Pouch & Rope -->
+  <g id="suspenders-belt">
+    <!-- Left Suspender Strap -->
+    <path d="M88 92 L98 178 L112 178 L104 92 Z" fill="url(#leatherGrad)" stroke="#1A1311" stroke-width="3.5" stroke-linejoin="round" />
+    <!-- Left Metal Buckle -->
+    <rect x="89" y="122" width="18" height="14" rx="2" fill="none" stroke="#C8C2B8" stroke-width="3.5" />
+    <line x1="98" y1="122" x2="98" y2="136" stroke="#C8C2B8" stroke-width="2.5" />
+
+    <!-- Right Suspender Strap -->
+    <path d="M162 94 L154 178 L168 178 L176 94 Z" fill="url(#leatherGrad)" stroke="#1A1311" stroke-width="3.5" stroke-linejoin="round" />
+    <!-- Right Metal Buckle -->
+    <rect x="159" y="125" width="18" height="14" rx="2" fill="none" stroke="#C8C2B8" stroke-width="3.5" />
+    <line x1="168" y1="125" x2="168" y2="139" stroke="#C8C2B8" stroke-width="2.5" />
+
+    <!-- Heavy Leather Utility Belt -->
+    <path d="M82 172 Q133 182 184 172 L185 185 Q133 195 81 185 Z" fill="#4D2E18" stroke="#1A1311" stroke-width="3.5" stroke-linejoin="round" />
+    <!-- Belt Center Buckle -->
+    <rect x="125" y="175" width="18" height="14" rx="2" fill="none" stroke="#B5ACA0" stroke-width="3.5" />
+
+    <!-- Leather Hip Pouch (viewer's left) -->
+    <path d="M68 172 L92 176 L86 202 Q75 204 64 198 Z" fill="url(#leatherGrad)" stroke="#1A1311" stroke-width="3.5" stroke-linejoin="round" />
+    <path d="M68 172 L92 176 L90 188 L66 184 Z" fill="#8C5832" stroke="#1A1311" stroke-width="2.5" stroke-linejoin="round" />
+    <rect x="75" y="182" width="6" height="8" rx="1" fill="#C8C2B8" stroke="#1A1311" stroke-width="1.5" />
+
+    <!-- Coiled Rope & Tin Cup on Hip (viewer's right) -->
+    <ellipse cx="188" cy="196" rx="10" ry="6" transform="rotate(20 188 196)" fill="#5E6368" stroke="#1A1311" stroke-width="3" />
+    <ellipse cx="182" cy="190" rx="7" ry="15" transform="rotate(-15 182 190)" fill="none" stroke="#A68256" stroke-width="4" />
+    <ellipse cx="182" cy="190" rx="7" ry="15" transform="rotate(-15 182 190)" fill="none" stroke="#1A1311" stroke-width="1.5" />
+  </g>
+
+  <!-- Left Arm (Viewer's Right): Rolled Flannel Sleeve, Muscular Forearm, Leather Bracer & Clenched Claw Hand -->
+  <g id="arm-left">
+    <!-- Upper Sleeve -->
+    <path d="M194 98 Q216 112 222 136 L192 146 Q186 126 180 112 Z" fill="url(#flannelPlaid)" stroke="#1A1311" stroke-width="4" stroke-linejoin="round" />
+    <!-- Rolled Beige Cuff -->
+    <path d="M190 142 Q208 132 226 136 L229 148 Q210 144 193 153 Z" fill="#B5A692" stroke="#1A1311" stroke-width="3.5" stroke-linejoin="round" />
+    <!-- Muscular Forearm -->
+    <path d="M196 149 Q215 144 225 147 L236 174 L214 180 Q201 165 196 149 Z" fill="url(#lumberSkin)" stroke="#1A1311" stroke-width="4" stroke-linejoin="round" />
+    <!-- Forearm Veins/Scars -->
+    <path d="M210 154 L216 165 L212 170" fill="none" stroke="#8C4830" stroke-width="2" stroke-linecap="round" />
+    <!-- Leather Wrist Bracer -->
+    <path d="M212 172 L235 166 L239 181 L216 186 Z" fill="url(#leatherGrad)" stroke="#1A1311" stroke-width="3.5" stroke-linejoin="round" />
+    <!-- Gnarled Left Hand -->
+    <path d="M216 184 Q210 196 216 202 Q223 200 222 192 L226 206 Q238 206 240 194 Q242 184 236 179 Z" fill="url(#lumberSkin)" stroke="#1A1311" stroke-width="3.5" stroke-linejoin="round" />
+  </g>
+
+  <!-- Right Arm (Viewer's Left) & Huge Bloodstained Axe -->
+  <g id="arm-right">
+    <!-- Upper Torn Flannel Sleeve -->
+    <path d="M68 96 Q42 110 36 136 L68 148 Q74 126 82 110 Z" fill="url(#flannelPlaid)" stroke="#1A1311" stroke-width="4" stroke-linejoin="round" />
+    <!-- Shoulder Rip showing skin -->
+    <ellipse cx="52" cy="112" rx="6" ry="3.5" transform="rotate(-30 52 112)" fill="#C9825E" stroke="#1A1311" stroke-width="2" />
+    <!-- Rolled Beige Cuff -->
+    <path d="M32 134 Q52 130 70 144 L66 155 Q48 142 29 146 Z" fill="#B5A692" stroke="#1A1311" stroke-width="3.5" stroke-linejoin="round" />
+    <!-- Huge Muscular Forearm -->
+    <path d="M34 144 Q52 142 64 152 L54 180 L26 174 Q24 156 34 144 Z" fill="url(#lumberSkin)" stroke="#1A1311" stroke-width="4" stroke-linejoin="round" />
+    <!-- Forearm Vein & Blood Splatter -->
+    <path d="M44 150 Q48 160 42 167" fill="none" stroke="#8C4830" stroke-width="2.2" stroke-linecap="round" />
+    <circle cx="49" cy="156" r="2.5" fill="#7A1C18" opacity="0.85" />
+    <!-- Leather Wrist Wrap -->
+    <path d="M26 166 L54 172 L50 187 L22 181 Z" fill="url(#leatherGrad)" stroke="#1A1311" stroke-width="3.5" stroke-linejoin="round" />
+
+    <!-- The Massive Lumberjack Axe -->
+    <g id="axe">
+      <!-- Wooden Handle extending from above hand down to the blade -->
+      <path d="M12 172 L21 163 L86 232 L74 242 Z" fill="url(#axeWoodGrad)" stroke="#1A1311" stroke-width="4" stroke-linejoin="round" />
+      <!-- Leather Grip Wraps on Handle -->
+      <line x1="34" y1="182" x2="43" y2="174" stroke="#2B1A0E" stroke-width="3.5" />
+      <line x1="39" y1="187" x2="48" y2="179" stroke="#2B1A0E" stroke-width="3.5" />
+      <line x1="44" y1="192" x2="53" y2="184" stroke="#2B1A0E" stroke-width="3.5" />
+
+      <!-- Massive Bearded Axe Blade -->
+      <path d="M64 206 L82 224 L42 260 Q18 242 20 212 Q44 216 64 206 Z" fill="url(#axeBladeGrad)" stroke="#1A1311" stroke-width="4" stroke-linejoin="round" />
+      <!-- Axe Poll (Back Hammer Head) -->
+      <path d="M67 203 L79 194 L93 210 L82 220 Z" fill="#50565E" stroke="#1A1311" stroke-width="3.5" stroke-linejoin="round" />
+      <!-- Sharp gleaming bevel edge -->
+      <path d="M20 212 Q18 242 42 260" fill="none" stroke="#E2E8F0" stroke-width="3.5" stroke-linecap="round" />
+      <!-- Bloodstains & Rust on Axe Blade -->
+      <path d="M22 222 Q24 242 42 257 L52 246 Q35 235 34 218 Z" fill="#7A1612" opacity="0.85" />
+      <circle cx="48" cy="232" r="5" fill="#7A1612" opacity="0.75" />
+      <circle cx="57" cy="224" r="3" fill="#7A1612" opacity="0.75" />
+    </g>
+
+    <!-- Right Fist Clenching Axe Handle -->
+    <path d="M22 179 Q18 192 28 197 Q38 199 44 192 Q48 184 42 179 Z" fill="url(#lumberSkin)" stroke="#1A1311" stroke-width="3.5" stroke-linejoin="round" />
+  </g>
+
+  <!-- Head: Wild Hair, Bushy Beard & Crazed Grinning Face (tilted menacingly) -->
+  <g id="head" transform="rotate(5 133 72)">
+    <!-- Back Wild Hair Spikes -->
+    <path d="M78 68 L62 56 L78 48 L66 34 L86 34 L82 18 L106 28 L118 10 L134 24 L154 12 L156 28 L180 22 L172 38 L194 42 L178 54 L192 68 Z" fill="#362217" stroke="#1A1311" stroke-width="3.5" stroke-linejoin="round" />
+
+    <!-- Ears -->
+    <ellipse cx="83" cy="68" rx="8" ry="11" fill="url(#lumberSkin)" stroke="#1A1311" stroke-width="3.5" />
+    <ellipse cx="183" cy="68" rx="8" ry="11" fill="url(#lumberSkin)" stroke="#1A1311" stroke-width="3.5" />
+
+    <!-- Head Base -->
+    <rect x="86" y="30" width="94" height="80" rx="36" fill="url(#lumberSkin)" stroke="#1A1311" stroke-width="4" />
+
+    <!-- Bushy Untamed Beard (jagged silhouette around jaw & chin) -->
+    <g id="beard">
+      <path d="M84 68 Q75 88 84 102 L90 98 L96 114 L106 108 L116 122 L126 115 L133 125 L142 115 L150 122 L158 108 L170 114 L174 98 L182 102 Q191 88 182 68 Q168 78 158 74 Q133 68 108 74 Q98 78 84 68 Z" fill="url(#beardGrad)" stroke="#1A1311" stroke-width="4" stroke-linejoin="round" />
+      <!-- Greyish-brown beard texture streaks -->
+      <path d="M102 92 L106 106 M118 96 L120 114 M133 98 L133 118 M148 96 L146 114 M164 92 L160 106" stroke="#6E5A4F" stroke-width="2.2" stroke-linecap="round" />
+    </g>
+
+    <!-- Crazed Face Details -->
+    <g id="face">
+      <!-- Dark Bags Under Eyes -->
+      <path d="M100 66 Q113 74 125 65" fill="none" stroke="#8C4830" stroke-width="3" stroke-linecap="round" />
+      <path d="M141 65 Q153 74 166 66" fill="none" stroke="#8C4830" stroke-width="3" stroke-linecap="round" />
+
+      <!-- Left Eye (Wide, Unhinged,Tiny Pupil) -->
+      <ellipse cx="113" cy="60" rx="11" ry="11" fill="#FFF8F0" stroke="#1A1311" stroke-width="3.5" />
+      <!-- Bloodshot veins in eye -->
+      <line x1="104" y1="58" x2="108" y2="60" stroke="#D93832" stroke-width="1.5" />
+      <circle cx="115" cy="60" r="3.8" fill="#2B1B12" />
+      <circle cx="116" cy="59" r="1.5" fill="#111111" />
+      <circle cx="113.5" cy="57.5" r="1.8" fill="#FFFFFF" />
+
+      <!-- Right Eye (Slightly squinted/bulging asymmetrically for manic look) -->
+      <ellipse cx="153" cy="61" rx="10" ry="9.5" fill="#FFF8F0" stroke="#1A1311" stroke-width="3.5" />
+      <line x1="161" y1="60" x2="157" y2="61" stroke="#D93832" stroke-width="1.5" />
+      <circle cx="151" cy="61" r="4.5" fill="#2B1B12" />
+      <circle cx="151" cy="61" r="2" fill="#111111" />
+      <circle cx="149" cy="58.5" r="1.8" fill="#FFFFFF" />
+
+      <!-- Heavy Furrowed Angry Eyebrows -->
+      <path d="M96 49 Q112 42 128 55" fill="none" stroke="#24150E" stroke-width="6" stroke-linecap="round" />
+      <path d="M170 50 Q154 44 138 55" fill="none" stroke="#24150E" stroke-width="6" stroke-linecap="round" />
+
+      <!-- Broad Reddish Bulbous Nose -->
+      <path d="M128 60 L124 72 Q133 79 142 72 L138 60" fill="#C96553" stroke="#1A1311" stroke-width="3" stroke-linejoin="round" />
+
+      <!-- Facial Scar & Blood Fleck on Cheek -->
+      <line x1="94" y1="68" x2="103" y2="73" stroke="#7A1C18" stroke-width="2.5" stroke-linecap="round" />
+
+      <!-- Thick Mustache -->
+      <path d="M102 82 Q133 70 164 82 Q158 90 133 84 Q108 90 102 82 Z" fill="#362419" stroke="#1A1311" stroke-width="3" stroke-linejoin="round" />
+
+      <!-- Wide Manic Toothy Grin (tilted upwards on left like reference) -->
+      <path d="M105 81 Q133 90 160 83 Q156 103 133 102 Q108 101 105 81 Z" fill="#FFFDF7" stroke="#1A1311" stroke-width="3.5" stroke-linejoin="round" />
+      <!-- Clenched Teeth Grid -->
+      <path d="M107 90 Q133 95 158 91" fill="none" stroke="#1A1311" stroke-width="2.5" />
+      <line x1="116" y1="84" x2="115" y2="98" stroke="#1A1311" stroke-width="2" />
+      <line x1="125" y1="85" x2="124" y2="100" stroke="#1A1311" stroke-width="2" />
+      <line x1="133" y1="86" x2="133" y2="101" stroke="#1A1311" stroke-width="2" />
+      <line x1="142" y1="86" x2="142" y2="100" stroke="#1A1311" stroke-width="2" />
+      <line x1="150" y1="85" x2="151" y2="98" stroke="#1A1311" stroke-width="2" />
+    </g>
+
+    <!-- Messy Strands of Hair Hanging Over Forehead -->
+    <g id="hair">
+      <path d="M84 52 C88 22, 178 22, 182 52 Q170 36 156 54 Q152 36 138 52 Q134 32 118 46 Q104 34 84 52 Z" fill="#4A2F20" stroke="#1A1311" stroke-width="3.5" stroke-linejoin="round" />
+      <!-- Loose wild hair strands -->
+      <path d="M132 32 Q142 44 136 56" fill="none" stroke="#24150E" stroke-width="3" stroke-linecap="round" />
+      <path d="M152 34 Q164 46 158 58" fill="none" stroke="#24150E" stroke-width="3" stroke-linecap="round" />
+    </g>
+  </g>
+</svg>

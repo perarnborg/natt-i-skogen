@@ -1,0 +1,89 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 180" width="180" height="180">
+  <defs>
+    <!-- Matchbox Yellow Label Gradient -->
+    <linearGradient id="matchboxYellow" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F7C948" />
+      <stop offset="65%" stop-color="#E0A526" />
+      <stop offset="100%" stop-color="#B87E14" />
+    </linearGradient>
+    <!-- Matchstick Wood Gradient -->
+    <linearGradient id="matchWood" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#F5DEB3" />
+      <stop offset="100%" stop-color="#C9A66B" />
+    </linearGradient>
+    <!-- Match Flame Glow -->
+    <radialGradient id="matchFlameGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#FFF6A9" stop-opacity="0.9" />
+      <stop offset="50%" stop-color="#F6AD55" stop-opacity="0.4" />
+      <stop offset="100%" stop-color="#F6AD55" stop-opacity="0" />
+    </radialGradient>
+  </defs>
+
+  <!-- Ground Shadow -->
+  <g id="shadow">
+    <ellipse cx="92" cy="150" rx="64" ry="18" fill="#06090F" opacity="0.6" />
+  </g>
+
+  <!-- Open Matchbox (3/4 Top-Down Angled Perspective) -->
+  <g id="matchbox" transform="rotate(-12 85 105)">
+    <!-- Sliding Inner Drawer (Pulled out to the right) -->
+    <g id="drawer">
+      <!-- Drawer Bottom & Sides -->
+      <path d="M74 72 L148 72 L156 96 L82 96 Z" fill="#3B4963" stroke="#17120F" stroke-width="3.5" stroke-linejoin="round" />
+      <path d="M82 96 L156 96 L156 116 L82 116 Z" fill="#253042" stroke="#17120F" stroke-width="3.5" stroke-linejoin="round" />
+      <path d="M148 72 L156 96 L156 116 L148 92 Z" fill="#D9B98B" stroke="#17120F" stroke-width="3.5" stroke-linejoin="round" />
+
+      <!-- Loose Matchsticks Inside Drawer -->
+      <g id="matches-inside">
+        <!-- Match 1 -->
+        <rect x="86" y="79" width="46" height="5" rx="2" fill="url(#matchWood)" stroke="#17120F" stroke-width="2" />
+        <ellipse cx="134" cy="81.5" rx="6" ry="4" fill="#D93829" stroke="#17120F" stroke-width="2" />
+        <!-- Match 2 -->
+        <rect x="90" y="86" width="48" height="5" rx="2" transform="rotate(3 114 88)" fill="url(#matchWood)" stroke="#17120F" stroke-width="2" />
+        <ellipse cx="140" cy="89.5" rx="6" ry="4" fill="#D93829" stroke="#17120F" stroke-width="2" />
+        <!-- Match 3 -->
+        <rect x="84" y="91" width="44" height="5" rx="2" transform="rotate(-2 106 93)" fill="url(#matchWood)" stroke="#17120F" stroke-width="2" />
+        <ellipse cx="130" cy="93" rx="6" ry="4" fill="#D93829" stroke="#17120F" stroke-width="2" />
+      </g>
+    </g>
+
+    <!-- Outer Matchbox Sleeve -->
+    <g id="sleeve">
+      <!-- Top Label Face -->
+      <path d="M24 68 L108 68 L116 98 L32 98 Z" fill="url(#matchboxYellow)" stroke="#17120F" stroke-width="4" stroke-linejoin="round" />
+      <!-- Vintage Red Border & Nordic Pine Emblem on Box -->
+      <path d="M31 73 L103 73 L109 93 L37 93 Z" fill="none" stroke="#9E2A24" stroke-width="2.5" stroke-linejoin="round" />
+      <!-- Tiny Pine Icon on Matchbox Label -->
+      <path d="M70 76 L60 89 L80 89 Z" fill="#1E4B38" stroke="#17120F" stroke-width="2" stroke-linejoin="round" />
+
+      <!-- Front Striker Side of Sleeve (Phosphorus Friction Strip) -->
+      <path d="M32 98 L116 98 L116 120 L32 120 Z" fill="#6E352C" stroke="#17120F" stroke-width="4" stroke-linejoin="round" />
+      <!-- Striker Dots Texture -->
+      <circle cx="46" cy="109" r="1.8" fill="#3D1A14" />
+      <circle cx="58" cy="107" r="1.8" fill="#3D1A14" />
+      <circle cx="70" cy="111" r="1.8" fill="#3D1A14" />
+      <circle cx="84" cy="108" r="1.8" fill="#3D1A14" />
+      <circle cx="98" cy="110" r="1.8" fill="#3D1A14" />
+
+      <!-- Left End Wall -->
+      <path d="M24 68 L32 98 L32 120 L24 90 Z" fill="#B87E14" stroke="#17120F" stroke-width="3.5" stroke-linejoin="round" />
+    </g>
+  </g>
+
+  <!-- Foreground Lit Matchstick (Making the icon unmistakable at a glance) -->
+  <g id="lit-match">
+    <!-- Matchstick Wooden Shaft -->
+    <rect x="46" y="128" width="76" height="8" rx="3" transform="rotate(-22 84 132)" fill="url(#matchWood)" stroke="#17120F" stroke-width="3.5" />
+    <!-- Charred Tip -->
+    <ellipse cx="118" cy="118" rx="8" ry="5" transform="rotate(-22 118 118)" fill="#2B1D16" stroke="#17120F" stroke-width="3" />
+
+    <!-- Burning Flame & Glow -->
+    <g id="match-flame">
+      <circle cx="124" cy="96" r="34" fill="url(#matchFlameGlow)" />
+      <!-- Outer Orange Flame -->
+      <path d="M124 66 C142 84, 142 108, 122 118 C104 112, 108 86, 124 66 Z" fill="#F68E2E" stroke="#17120F" stroke-width="3" stroke-linejoin="round" />
+      <!-- Inner Bright Yellow Core -->
+      <path d="M123 80 C133 92, 133 108, 122 114 C113 108, 114 92, 123 80 Z" fill="#FFF6A9" />
+    </g>
+  </g>
+</svg>

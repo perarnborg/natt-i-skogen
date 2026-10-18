@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 180" width="220" height="180">
+  <defs>
+    <linearGradient id="rockMainGrad" x1="20%" y1="0%" x2="80%" y2="100%">
+      <stop offset="0%" stop-color="#6B7885" />
+      <stop offset="55%" stop-color="#47525E" />
+      <stop offset="100%" stop-color="#293038" />
+    </linearGradient>
+    <linearGradient id="rockSideGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#525E6B" />
+      <stop offset="100%" stop-color="#222830" />
+    </linearGradient>
+    <radialGradient id="shroomGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#7AF5D8" stop-opacity="0.75" />
+      <stop offset="100%" stop-color="#7AF5D8" stop-opacity="0" />
+    </radialGradient>
+  </defs>
+
+  <!-- Ground Shadow -->
+  <g id="shadow">
+    <ellipse cx="110" cy="146" rx="88" ry="22" fill="#06090F" opacity="0.65" />
+  </g>
+
+  <!-- Main Boulder & Secondary Stone -->
+  <g id="boulder">
+    <!-- Main Angular Nordic Forest Boulder -->
+    <path d="M36 136 L46 78 L88 42 L148 48 L182 88 L176 140 Q110 150 36 136 Z" fill="url(#rockMainGrad)" stroke="#14100E" stroke-width="4" stroke-linejoin="round" />
+
+    <!-- Chiseled Rock Facet Planes -->
+    <path d="M88 42 L114 78 L148 48 Z" fill="#7D8B99" opacity="0.45" />
+    <path d="M46 78 L114 78 L104 142 L36 136 Z" fill="#37404A" opacity="0.45" />
+    <path d="M88 42 L114 78 L104 142 M114 78 L182 88" fill="none" stroke="#1E242B" stroke-width="3" stroke-linejoin="round" />
+
+    <!-- Smaller Foreground Rock on Left -->
+    <path d="M24 142 L32 108 L64 98 L86 122 L80 148 Q50 152 24 142 Z" fill="url(#rockSideGrad)" stroke="#14100E" stroke-width="4" stroke-linejoin="round" />
+
+    <!-- Thick Forest Moss Blanket on Top of Boulder -->
+    <path d="M68 58 Q88 38 134 44 Q158 48 164 68 Q144 76 128 68 Q112 82 94 70 Q76 76 68 58 Z" fill="#2E6B4E" stroke="#14100E" stroke-width="3.5" stroke-linejoin="round" />
+    <path d="M82 54 Q108 46 134 52" fill="none" stroke="#52A37E" stroke-width="3" stroke-linecap="round" opacity="0.6" />
+  </g>
+
+  <!-- Bioluminescent Forest Mushrooms at Rock Base -->
+  <g id="glowing-mushrooms">
+    <circle cx="166" cy="134" r="24" fill="url(#shroomGlow)" />
+    <!-- Mushroom 1 -->
+    <path d="M161 132 L160 146 L166 146 L166 132 Z" fill="#C4E6DE" stroke="#14100E" stroke-width="2" />
+    <path d="M152 134 Q163 118 174 134 Z" fill="#4CE0B8" stroke="#14100E" stroke-width="2.5" stroke-linejoin="round" />
+    <!-- Mushroom 2 -->
+    <path d="M175 137 L175 147 L179 147 L179 137 Z" fill="#C4E6DE" stroke="#14100E" stroke-width="2" />
+    <path d="M169 139 Q177 128 185 139 Z" fill="#4CE0B8" stroke="#14100E" stroke-width="2.2" stroke-linejoin="round" />
+  </g>
+</svg>

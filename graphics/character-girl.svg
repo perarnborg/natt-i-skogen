@@ -1,0 +1,189 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 240" width="200" height="240">
+  <defs>
+    <!-- Night Rim Light & Shading Gradients -->
+    <linearGradient id="girlCoatGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#F5B82E" />
+      <stop offset="65%" stop-color="#E09619" />
+      <stop offset="100%" stop-color="#B8730E" />
+    </linearGradient>
+    <linearGradient id="girlBeanieGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#D94B43" />
+      <stop offset="100%" stop-color="#9E2A24" />
+    </linearGradient>
+    <linearGradient id="girlHairGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#5C3A28" />
+      <stop offset="100%" stop-color="#3B2316" />
+    </linearGradient>
+    <linearGradient id="girlSkinGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#FAD4B8" />
+      <stop offset="100%" stop-color="#E8B490" />
+    </linearGradient>
+    <radialGradient id="flashlightGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#FFF6A9" stop-opacity="0.95" />
+      <stop offset="50%" stop-color="#FFE066" stop-opacity="0.4" />
+      <stop offset="100%" stop-color="#FFE066" stop-opacity="0" />
+    </radialGradient>
+  </defs>
+
+  <!-- Ground Shadow (3/4 top-down perspective) -->
+  <g id="shadow">
+    <ellipse cx="100" cy="212" rx="46" ry="16" fill="#090D16" opacity="0.55" />
+    <ellipse cx="100" cy="212" rx="34" ry="11" fill="#05070C" opacity="0.45" />
+  </g>
+
+  <!-- Backpack (peeking out from behind shoulders in 3/4 view) -->
+  <g id="backpack">
+    <rect x="60" y="108" width="80" height="58" rx="18" fill="#5E3B28" stroke="#1E1715" stroke-width="4" />
+    <path d="M64 122 Q100 132 136 122" fill="none" stroke="#3D2518" stroke-width="3" />
+    <!-- Sleeping mat rolled on top of backpack -->
+    <rect x="66" y="100" width="68" height="14" rx="7" fill="#4E8C6F" stroke="#1E1715" stroke-width="3.5" />
+  </g>
+
+  <!-- Legs & Rain Boots -->
+  <g id="legs">
+    <!-- Left Leg -->
+    <path d="M77 168 L75 192 L93 192 L93 168 Z" fill="#2C3E55" stroke="#1E1715" stroke-width="4" stroke-linejoin="round" />
+    <!-- Right Leg -->
+    <path d="M107 168 L107 192 L125 192 L123 168 Z" fill="#2C3E55" stroke="#1E1715" stroke-width="4" stroke-linejoin="round" />
+
+    <!-- Left Red Rain Boot -->
+    <path d="M72 187 L95 187 L95 208 Q95 214 82 214 L70 214 Q65 214 66 207 L70 195 Z" fill="#C83E37" stroke="#1E1715" stroke-width="4" stroke-linejoin="round" />
+    <path d="M72 191 L95 191" stroke="#F4D068" stroke-width="3" />
+    <path d="M66 210 L95 210" stroke="#7A201C" stroke-width="3" stroke-linecap="round" />
+
+    <!-- Right Red Rain Boot -->
+    <path d="M105 187 L128 187 L130 195 L134 207 Q135 214 130 214 L118 214 Q105 214 105 208 Z" fill="#C83E37" stroke="#1E1715" stroke-width="4" stroke-linejoin="round" />
+    <path d="M105 191 L128 191" stroke="#F4D068" stroke-width="3" />
+    <path d="M105 210 L134 210" stroke="#7A201C" stroke-width="3" stroke-linecap="round" />
+  </g>
+
+  <!-- Torso: Yellow Raincoat -->
+  <g id="torso">
+    <path d="M68 118 Q62 148 58 174 Q100 184 142 174 Q138 148 132 118 Z" fill="url(#girlCoatGrad)" stroke="#1E1715" stroke-width="4" stroke-linejoin="round" />
+    <!-- Coat center placket & buttons -->
+    <line x1="100" y1="124" x2="100" y2="177" stroke="#1E1715" stroke-width="3.5" />
+    <circle cx="94" cy="138" r="2.8" fill="#5C3A28" />
+    <circle cx="94" cy="153" r="2.8" fill="#5C3A28" />
+    <circle cx="94" cy="168" r="2.8" fill="#5C3A28" />
+    <!-- Pockets -->
+    <path d="M66 152 L82 155 L80 167 L64 164 Z" fill="#D18812" stroke="#1E1715" stroke-width="2.5" stroke-linejoin="round" />
+    <path d="M134 152 L118 155 L120 167 L136 164 Z" fill="#D18812" stroke="#1E1715" stroke-width="2.5" stroke-linejoin="round" />
+  </g>
+
+  <!-- Left Arm & Hand -->
+  <g id="arm-left">
+    <path d="M69 122 Q52 136 49 158 Q55 164 64 160 Q68 145 74 132 Z" fill="url(#girlCoatGrad)" stroke="#1E1715" stroke-width="4" stroke-linejoin="round" />
+    <!-- Red Mitten -->
+    <circle cx="55" cy="161" r="7" fill="#C83E37" stroke="#1E1715" stroke-width="3.5" />
+  </g>
+
+  <!-- Right Arm & Flashlight -->
+  <g id="arm-right">
+    <path d="M131 122 Q148 136 151 156 Q144 162 136 158 Q132 145 126 132 Z" fill="url(#girlCoatGrad)" stroke="#1E1715" stroke-width="4" stroke-linejoin="round" />
+    <!-- Red Mitten -->
+    <circle cx="145" cy="158" r="7" fill="#C83E37" stroke="#1E1715" stroke-width="3.5" />
+    <!-- Flashlight held forward-right -->
+    <g id="flashlight">
+      <rect x="139" y="152" width="18" height="10" rx="3" transform="rotate(25 148 157)" fill="#4A5568" stroke="#1E1715" stroke-width="3" />
+      <ellipse cx="156" cy="161" rx="4" ry="6" transform="rotate(25 156 161)" fill="#FFF380" stroke="#1E1715" stroke-width="2.5" />
+      <circle cx="160" cy="164" r="18" fill="url(#flashlightGlow)" />
+    </g>
+  </g>
+
+  <!-- Cozy Scarf around neck -->
+  <g id="scarf">
+    <path d="M68 114 Q100 128 132 114 Q136 125 127 130 Q100 140 73 130 Q64 125 68 114 Z" fill="#8C3A5C" stroke="#1E1715" stroke-width="4" stroke-linejoin="round" />
+    <!-- Scarf stripes -->
+    <path d="M82 120 L80 133" stroke="#F2C97D" stroke-width="3" />
+    <path d="M100 123 L100 135" stroke="#F2C97D" stroke-width="3" />
+    <path d="M118 120 L120 133" stroke="#F2C97D" stroke-width="3" />
+    <!-- Hanging scarf tail -->
+    <path d="M108 128 L116 150 L128 147 L122 125 Z" fill="#8C3A5C" stroke="#1E1715" stroke-width="3.5" stroke-linejoin="round" />
+    <path d="M112 139 L125 136" stroke="#F2C97D" stroke-width="3" />
+  </g>
+
+  <!-- Braids (sticking out on both sides for unmistakable silhouette) -->
+  <g id="hair-braids">
+    <!-- Left Braid -->
+    <g id="braid-left">
+      <circle cx="52" cy="96" r="9" fill="url(#girlHairGrad)" stroke="#1E1715" stroke-width="3.5" />
+      <circle cx="45" cy="107" r="8" fill="url(#girlHairGrad)" stroke="#1E1715" stroke-width="3.5" />
+      <circle cx="40" cy="117" r="6.5" fill="url(#girlHairGrad)" stroke="#1E1715" stroke-width="3.5" />
+      <!-- Hair tie -->
+      <rect x="35" y="120" width="9" height="4.5" rx="2" transform="rotate(-20 39 122)" fill="#D94B43" stroke="#1E1715" stroke-width="2" />
+      <!-- Braid tip -->
+      <path d="M37 123 L31 132 L41 131 Z" fill="#3B2316" stroke="#1E1715" stroke-width="3" stroke-linejoin="round" />
+    </g>
+    <!-- Right Braid -->
+    <g id="braid-right">
+      <circle cx="148" cy="96" r="9" fill="url(#girlHairGrad)" stroke="#1E1715" stroke-width="3.5" />
+      <circle cx="155" cy="107" r="8" fill="url(#girlHairGrad)" stroke="#1E1715" stroke-width="3.5" />
+      <circle cx="160" cy="117" r="6.5" fill="url(#girlHairGrad)" stroke="#1E1715" stroke-width="3.5" />
+      <!-- Hair tie -->
+      <rect x="156" y="120" width="9" height="4.5" rx="2" transform="rotate(20 160 122)" fill="#D94B43" stroke="#1E1715" stroke-width="2" />
+      <!-- Braid tip -->
+      <path d="M163 123 L169 132 L159 131 Z" fill="#3B2316" stroke="#1E1715" stroke-width="3" stroke-linejoin="round" />
+    </g>
+  </g>
+
+  <!-- Head (3/4 top-down proportion) -->
+  <g id="head">
+    <!-- Ears -->
+    <circle cx="55" cy="88" r="8" fill="url(#girlSkinGrad)" stroke="#1E1715" stroke-width="3.5" />
+    <circle cx="145" cy="88" r="8" fill="url(#girlSkinGrad)" stroke="#1E1715" stroke-width="3.5" />
+
+    <!-- Head base -->
+    <rect x="57" y="42" width="86" height="78" rx="40" fill="url(#girlSkinGrad)" stroke="#1E1715" stroke-width="4" />
+
+    <!-- Rosy Night-Chilled Cheeks -->
+    <ellipse cx="72" cy="100" rx="8" ry="5" fill="#E87A74" opacity="0.55" />
+    <ellipse cx="128" cy="100" rx="8" ry="5" fill="#E87A74" opacity="0.55" />
+
+    <!-- Face / Expressive Eyes -->
+    <g id="face">
+      <!-- Left Eye -->
+      <ellipse cx="81" cy="89" rx="7.5" ry="9" fill="#FFFFFF" stroke="#1E1715" stroke-width="3" />
+      <ellipse cx="82" cy="90" rx="4.8" ry="6" fill="#2A1B12" />
+      <circle cx="79.5" cy="86.5" r="2.2" fill="#FFFFFF" />
+      <circle cx="84" cy="92.5" r="1.1" fill="#FFFFFF" />
+
+      <!-- Right Eye -->
+      <ellipse cx="119" cy="89" rx="7.5" ry="9" fill="#FFFFFF" stroke="#1E1715" stroke-width="3" />
+      <ellipse cx="118" cy="90" rx="4.8" ry="6" fill="#2A1B12" />
+      <circle cx="116.5" cy="86.5" r="2.2" fill="#FFFFFF" />
+      <circle cx="121" cy="92.5" r="1.1" fill="#FFFFFF" />
+
+      <!-- Eyebrows (alert & brave) -->
+      <path d="M72 77 Q81 74 88 78" fill="none" stroke="#3B2316" stroke-width="3" stroke-linecap="round" />
+      <path d="M128 77 Q119 74 112 78" fill="none" stroke="#3B2316" stroke-width="3" stroke-linecap="round" />
+
+      <!-- Cute button nose -->
+      <path d="M98 95 Q100 98 102 95" fill="none" stroke="#C48B68" stroke-width="2.8" stroke-linecap="round" />
+
+      <!-- Mouth (alert small "o" / tense breath in the cold forest) -->
+      <path d="M95 106 Q100 109 105 106" fill="none" stroke="#1E1715" stroke-width="2.8" stroke-linecap="round" />
+    </g>
+
+    <!-- Front Hair Bangs framing forehead -->
+    <g id="hair-front">
+      <path d="M56 76 Q64 56 100 56 Q136 56 144 76 Q134 67 120 74 Q108 62 100 72 Q92 62 80 74 Q66 67 56 76 Z" fill="url(#girlHairGrad)" stroke="#1E1715" stroke-width="3.5" stroke-linejoin="round" />
+    </g>
+
+    <!-- Knitted Red Beanie (viewed from 3/4 top-down, showing volume on top of head) -->
+    <g id="hat">
+      <!-- Beanie dome -->
+      <path d="M55 68 C53 32, 147 32, 145 68 Z" fill="url(#girlBeanieGrad)" stroke="#1E1715" stroke-width="4" stroke-linejoin="round" />
+      <!-- Ribbed folded cuff -->
+      <path d="M52 64 Q100 53 148 64 L146 76 Q100 65 54 76 Z" fill="#E35D55" stroke="#1E1715" stroke-width="4" stroke-linejoin="round" />
+      <!-- Ribbing lines on cuff -->
+      <line x1="70" y1="61" x2="69" y2="73" stroke="#9E2A24" stroke-width="2.5" />
+      <line x1="85" y1="59" x2="85" y2="71" stroke="#9E2A24" stroke-width="2.5" />
+      <line x1="100" y1="58" x2="100" y2="70" stroke="#9E2A24" stroke-width="2.5" />
+      <line x1="115" y1="59" x2="115" y2="71" stroke="#9E2A24" stroke-width="2.5" />
+      <line x1="130" y1="61" x2="131" y2="73" stroke="#9E2A24" stroke-width="2.5" />
+      <!-- Fluffy Cream Pom-pom on top -->
+      <circle cx="100" cy="27" r="13" fill="#FFF8E7" stroke="#1E1715" stroke-width="4" />
+      <path d="M94 23 Q100 19 106 24" fill="none" stroke="#E2D5B5" stroke-width="2.5" stroke-linecap="round" />
+    </g>
+  </g>
+</svg>

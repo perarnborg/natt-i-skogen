@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 320" width="260" height="320">
+  <defs>
+    <!-- Trunk Bark Gradient -->
+    <linearGradient id="pineTrunkGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#593A27" />
+      <stop offset="55%" stop-color="#3D2618" />
+      <stop offset="100%" stop-color="#24150C" />
+    </linearGradient>
+
+    <!-- Pine Foliage Gradients (3/4 Top-Down Moonlight from Top-Left) -->
+    <linearGradient id="pineTierBottom" x1="20%" y1="0%" x2="80%" y2="100%">
+      <stop offset="0%" stop-color="#1E4B3B" />
+      <stop offset="60%" stop-color="#133328" />
+      <stop offset="100%" stop-color="#0B1F18" />
+    </linearGradient>
+
+    <linearGradient id="pineTierMid" x1="20%" y1="0%" x2="80%" y2="100%">
+      <stop offset="0%" stop-color="#28604C" />
+      <stop offset="60%" stop-color="#194234" />
+      <stop offset="100%" stop-color="#0E2920" />
+    </linearGradient>
+
+    <linearGradient id="pineTierTop" x1="20%" y1="0%" x2="80%" y2="100%">
+      <stop offset="0%" stop-color="#367A62" />
+      <stop offset="55%" stop-color="#225442" />
+      <stop offset="100%" stop-color="#13362A" />
+    </linearGradient>
+
+    <linearGradient id="pineCrown" x1="20%" y1="0%" x2="80%" y2="100%">
+      <stop offset="0%" stop-color="#48967A" />
+      <stop offset="65%" stop-color="#2B6953" />
+      <stop offset="100%" stop-color="#184233" />
+    </linearGradient>
+  </defs>
+
+  <!-- Ground Shadow & Mossy Base -->
+  <g id="shadow">
+    <ellipse cx="130" cy="286" rx="88" ry="24" fill="#06090F" opacity="0.65" />
+    <ellipse cx="130" cy="286" rx="62" ry="16" fill="#030508" opacity="0.55" />
+  </g>
+
+  <!-- Exposed Roots & Mossy Forest Floor -->
+  <g id="trunk">
+    <!-- Small ferns/moss tufts around base -->
+    <ellipse cx="86" cy="284" rx="16" ry="6" fill="#1E4B38" stroke="#14100E" stroke-width="2.5" />
+    <ellipse cx="174" cy="286" rx="14" ry="5" fill="#1E4B38" stroke="#14100E" stroke-width="2.5" />
+
+    <!-- Trunk & Flared Roots -->
+    <path d="M104 200 L98 258 Q88 278 68 286 Q90 292 108 282 L114 288 Q130 294 146 288 L152 282 Q170 292 192 286 Q172 278 162 258 L156 200 Z" fill="url(#pineTrunkGrad)" stroke="#14100E" stroke-width="4" stroke-linejoin="round" />
+
+    <!-- Bark Texture Lines & Cut Mark -->
+    <path d="M114 220 L110 268 M128 228 L127 278 M144 224 L148 270" stroke="#24150C" stroke-width="3" stroke-linecap="round" />
+    <!-- Old Axe Notch in Trunk -->
+    <path d="M100 246 L116 252 L101 258 Z" fill="#A6764C" stroke="#14100E" stroke-width="2.5" stroke-linejoin="round" />
+
+    <!-- Moss Patch on Trunk Base -->
+    <path d="M96 266 Q112 260 120 274 Q112 284 90 282 Z" fill="#2E6B4E" stroke="#14100E" stroke-width="2.5" stroke-linejoin="round" />
+  </g>
+
+  <!-- Pine Needles / Boughs (Layered from bottom to top for 3/4 perspective) -->
+  <g id="foliage">
+    <!-- Tier 1: Lowest Wide Boughs -->
+    <path d="M130 130 L32 216 Q50 232 76 220 Q92 240 130 238 Q168 240 184 220 Q210 232 228 216 Z" fill="url(#pineTierBottom)" stroke="#14100E" stroke-width="4" stroke-linejoin="round" />
+    <!-- Bough shadow under-edge -->
+    <path d="M56 214 Q76 226 94 212 M104 222 Q130 236 156 222 M166 212 Q184 226 204 214" fill="none" stroke="#081712" stroke-width="3.5" stroke-linecap="round" />
+
+    <!-- Tier 2: Lower-Mid Boughs -->
+    <path d="M130 92 L42 178 Q62 194 86 180 Q106 198 130 196 Q154 198 174 180 Q198 194 218 178 Z" fill="url(#pineTierMid)" stroke="#14100E" stroke-width="4" stroke-linejoin="round" />
+    <path d="M68 174 Q88 186 106 172 M112 182 Q130 192 148 182 M154 172 Q172 186 192 174" fill="none" stroke="#0D241C" stroke-width="3.5" stroke-linecap="round" />
+
+    <!-- Tier 3: Upper-Mid Boughs -->
+    <path d="M130 54 L58 136 Q76 150 98 138 Q114 154 130 152 Q146 154 162 138 Q184 150 202 136 Z" fill="url(#pineTierTop)" stroke="#14100E" stroke-width="4" stroke-linejoin="round" />
+    <!-- Moonlight Rim Highlights on Left Boughs -->
+    <path d="M66 132 L124 66" fill="none" stroke="#62B597" stroke-width="3" stroke-linecap="round" opacity="0.55" />
+
+    <!-- Tier 4: Top Crown (3/4 Top-Down Focal Point) -->
+    <path d="M130 18 L78 92 Q96 106 112 96 Q130 110 148 96 Q164 106 182 92 Z" fill="url(#pineCrown)" stroke="#14100E" stroke-width="4" stroke-linejoin="round" />
+    <!-- Moonlight Rim Highlight on Crown -->
+    <path d="M130 24 L86 86 Q98 95 110 88" fill="none" stroke="#7ED4B4" stroke-width="3.5" stroke-linecap="round" opacity="0.65" />
+  </g>
+</svg>

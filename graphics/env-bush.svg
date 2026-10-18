@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 170" width="220" height="170">
+  <defs>
+    <radialGradient id="bushBackGrad" cx="45%" cy="35%" r="65%">
+      <stop offset="0%" stop-color="#224D3E" />
+      <stop offset="70%" stop-color="#143026" />
+      <stop offset="100%" stop-color="#0B1C16" />
+    </radialGradient>
+    <radialGradient id="bushFrontGrad" cx="40%" cy="30%" r="65%">
+      <stop offset="0%" stop-color="#36755E" />
+      <stop offset="65%" stop-color="#1F4A3B" />
+      <stop offset="100%" stop-color="#122E24" />
+    </radialGradient>
+  </defs>
+
+  <!-- Ground Shadow -->
+  <g id="shadow">
+    <ellipse cx="110" cy="140" rx="86" ry="20" fill="#06090F" opacity="0.65" />
+  </g>
+
+  <!-- Sticking-out Dry Twigs -->
+  <g id="twigs">
+    <path d="M42 102 L20 86 M28 92 L24 80" stroke="#4A3020" stroke-width="3.5" stroke-linecap="round" />
+    <path d="M178 98 L200 82 M190 90 L196 78" stroke="#4A3020" stroke-width="3.5" stroke-linecap="round" />
+  </g>
+
+  <!-- Back Foliage Mass -->
+  <g id="foliage-back">
+    <path d="M32 118 C16 96, 34 62, 66 64 C82 36, 138 34, 156 62 C188 60, 204 94, 188 118 C196 136, 168 146, 144 140 C120 148, 96 148, 74 140 C48 146, 24 134, 32 118 Z" fill="url(#bushBackGrad)" stroke="#14100E" stroke-width="4" stroke-linejoin="round" />
+  </g>
+
+  <!-- Front Leafy Cluster -->
+  <g id="foliage-front">
+    <path d="M48 116 C38 92, 62 66, 90 72 C108 50, 148 54, 158 78 C182 82, 188 114, 168 128 C150 142, 124 140, 110 134 C92 142, 58 138, 48 116 Z" fill="url(#bushFrontGrad)" stroke="#14100E" stroke-width="4" stroke-linejoin="round" />
+
+    <!-- Moonlight Rim Highlights -->
+    <path d="M66 78 Q82 66 96 76" fill="none" stroke="#7ED4B4" stroke-width="3" stroke-linecap="round" opacity="0.55" />
+    <path d="M106 64 Q126 54 144 68" fill="none" stroke="#7ED4B4" stroke-width="3" stroke-linecap="round" opacity="0.6" />
+  </g>
+
+  <!-- Wild Forest Berries (Lingonberries / Night Berries) -->
+  <g id="berries">
+    <circle cx="74" cy="106" r="4.5" fill="#D9433B" stroke="#14100E" stroke-width="2" />
+    <circle cx="82" cy="112" r="4" fill="#D9433B" stroke="#14100E" stroke-width="2" />
+    <circle cx="132" cy="96" r="4.5" fill="#D9433B" stroke="#14100E" stroke-width="2" />
+    <circle cx="141" cy="101" r="4" fill="#D9433B" stroke="#14100E" stroke-width="2" />
+    <circle cx="135" cy="105" r="3.8" fill="#D9433B" stroke="#14100E" stroke-width="2" />
+    <circle cx="106" cy="120" r="4.2" fill="#D9433B" stroke="#14100E" stroke-width="2" />
+  </g>
+</svg>

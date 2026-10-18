@@ -1,0 +1,110 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 220" width="180" height="220">
+  <defs>
+    <!-- Dark Iron & Brass Lantern Body -->
+    <linearGradient id="lanternMetal" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#5A6570" />
+      <stop offset="50%" stop-color="#374047" />
+      <stop offset="100%" stop-color="#1F2429" />
+    </linearGradient>
+    <linearGradient id="lanternBrass" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#F5CA5C" />
+      <stop offset="55%" stop-color="#C49027" />
+      <stop offset="100%" stop-color="#875E12" />
+    </linearGradient>
+    <!-- Glass Globe Gradient -->
+    <linearGradient id="lanternGlass" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#A0C4D6" stop-opacity="0.45" />
+      <stop offset="100%" stop-color="#4A6B7C" stop-opacity="0.25" />
+    </linearGradient>
+    <!-- Warm Lit Glow -->
+    <radialGradient id="lanternWarmGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#FFF9B0" stop-opacity="0.95" />
+      <stop offset="45%" stop-color="#F6AD55" stop-opacity="0.5" />
+      <stop offset="100%" stop-color="#ED8936" stop-opacity="0" />
+    </radialGradient>
+    <!-- Blinding Flash Burst (for blinding the lumberjack!) -->
+    <radialGradient id="lanternBlindBurst" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="1" />
+      <stop offset="40%" stop-color="#FFF9B0" stop-opacity="0.9" />
+      <stop offset="75%" stop-color="#F6E05E" stop-opacity="0.45" />
+      <stop offset="100%" stop-color="#F6E05E" stop-opacity="0" />
+    </radialGradient>
+  </defs>
+
+  <!-- Ground Shadow -->
+  <g id="shadow">
+    <ellipse cx="90" cy="196" rx="46" ry="13" fill="#06090F" opacity="0.6" />
+  </g>
+
+  <!-- BLINDING FLASH BURST (Toggle when player blinds the lumberjack) -->
+  <g id="flash-blind" opacity="0">
+    <circle cx="90" cy="126" r="86" fill="url(#lanternBlindBurst)" />
+    <!-- Dynamic Starburst Rays -->
+    <path d="M90 14 L98 96 L176 76 L108 118 L178 158 L100 138 L90 214 L80 138 L2 158 L72 118 L4 76 L82 96 Z" fill="#FFFFFF" opacity="0.75" />
+  </g>
+
+  <!-- WARM AMBIENT GLOW (Visible when lit) -->
+  <g id="glow-lit">
+    <circle cx="90" cy="126" r="68" fill="url(#lanternWarmGlow)" />
+  </g>
+
+  <!-- Hanging Bail / Wire Handle -->
+  <g id="handle">
+    <path d="M52 84 C42 20, 138 20, 128 84" fill="none" stroke="#2D353C" stroke-width="5" stroke-linecap="round" />
+    <path d="M52 84 C42 20, 138 20, 128 84" fill="none" stroke="#7B8794" stroke-width="2" stroke-linecap="round" />
+    <!-- Top Hanging Ring -->
+    <circle cx="90" cy="24" r="9" fill="none" stroke="#17120F" stroke-width="5" />
+    <circle cx="90" cy="24" r="9" fill="none" stroke="#D9A738" stroke-width="2.5" />
+  </g>
+
+  <!-- Storm Lantern Frame & Oil Tank Base -->
+  <g id="lantern-body">
+    <!-- Outer Side Air Tubes -->
+    <path d="M54 78 Q34 126 52 174" fill="none" stroke="#17120F" stroke-width="11" stroke-linecap="round" />
+    <path d="M54 78 Q34 126 52 174" fill="none" stroke="url(#lanternMetal)" stroke-width="6" stroke-linecap="round" />
+    <path d="M126 78 Q146 126 128 174" fill="none" stroke="#17120F" stroke-width="11" stroke-linecap="round" />
+    <path d="M126 78 Q146 126 128 174" fill="none" stroke="url(#lanternMetal)" stroke-width="6" stroke-linecap="round" />
+
+    <!-- Glass Globe -->
+    <path d="M60 88 C46 112, 48 144, 62 166 L118 166 C132 144, 134 112, 120 88 Z" fill="url(#lanternGlass)" stroke="#17120F" stroke-width="3.5" />
+    <!-- Glass Reflection Highlight -->
+    <path d="M64 98 Q56 126 65 154" fill="none" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round" opacity="0.6" />
+
+    <!-- Unlit Wick (Always present inside globe) -->
+    <g id="flame-unlit">
+      <path d="M78 166 Q90 156 102 166 Z" fill="url(#lanternBrass)" stroke="#17120F" stroke-width="2.5" />
+      <rect x="87" y="150" width="6" height="10" rx="2" fill="#2B211B" stroke="#17120F" stroke-width="1.5" />
+    </g>
+
+    <!-- Lit Flame Inside Glass Globe (Toggleable) -->
+    <g id="flame-lit">
+      <!-- Outer Orange/Gold Flame -->
+      <path d="M90 100 C108 122, 110 148, 90 156 C70 148, 72 122, 90 100 Z" fill="#F6AD55" stroke="#DD6B20" stroke-width="2" />
+      <!-- Inner Bright Yellow/White Core -->
+      <path d="M90 114 C100 128, 100 146, 90 152 C80 146, 80 128, 90 114 Z" fill="#FFF9B0" />
+    </g>
+
+    <!-- Wire Guard Cage Over Glass -->
+    <path d="M52 114 Q90 122 128 114" fill="none" stroke="#17120F" stroke-width="3" />
+    <path d="M52 142 Q90 150 128 142" fill="none" stroke="#17120F" stroke-width="3" />
+    <line x1="76" y1="88" x2="72" y2="166" stroke="#17120F" stroke-width="2.5" />
+    <line x1="104" y1="88" x2="108" y2="166" stroke="#17120F" stroke-width="2.5" />
+
+    <!-- Top Chimney Hood & Cap -->
+    <path d="M54 88 L126 88 L116 72 L64 72 Z" fill="url(#lanternMetal)" stroke="#17120F" stroke-width="3.5" stroke-linejoin="round" />
+    <rect x="68" y="60" width="44" height="14" rx="3" fill="url(#lanternBrass)" stroke="#17120F" stroke-width="3.5" />
+    <!-- Vent Holes on Chimney -->
+    <circle cx="78" cy="67" r="2" fill="#17120F" />
+    <circle cx="90" cy="67" r="2" fill="#17120F" />
+    <circle cx="102" cy="67" r="2" fill="#17120F" />
+    <!-- Top Dome Cap -->
+    <path d="M62 60 Q90 44 118 60 Z" fill="url(#lanternMetal)" stroke="#17120F" stroke-width="3.5" stroke-linejoin="round" />
+
+    <!-- Bottom Oil Reservoir Base -->
+    <path d="M56 164 L124 164 L132 186 Q90 194 48 186 Z" fill="url(#lanternMetal)" stroke="#17120F" stroke-width="4" stroke-linejoin="round" />
+    <path d="M54 182 Q90 190 126 182 L128 192 Q90 200 52 192 Z" fill="url(#lanternBrass)" stroke="#17120F" stroke-width="3.5" stroke-linejoin="round" />
+    <!-- Oil Filler Cap & Wick Adjustment Knob -->
+    <circle cx="70" cy="174" r="5" fill="url(#lanternBrass)" stroke="#17120F" stroke-width="2.5" />
+    <circle cx="112" cy="160" r="4" fill="url(#lanternBrass)" stroke="#17120F" stroke-width="2.5" />
+  </g>
+</svg>

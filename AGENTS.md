@@ -1,4 +1,22 @@
-This is an Expo/React Native mobile application. Prioritize mobile-first patterns, performance, and cross-platform compatibility.
+# Repository Overview
+
+Det här är ett mobil-spel skrivet i React Native med Expo.
+
+Spelet går ut på man är i skogen på natten. Och man ska fly ifrån en galen skogshuggare genom att springa från träd till träd. Man kan gömma sig i trädkojor.
+
+Man kan inte se så långt i skogen, men det går att hitta kartor som gör att man kan se lite längre.
+
+Det går att hitta lyktor i kistor som kan blända skogshugaren.
+
+Man behöver tändstickor till att tända lyktan.
+
+Tändstickorna är gömda i trädkojor
+
+Lyktan lyser bara i 30 sekunder efter varje tändsticka.
+
+Det ska finnas olika levlar.
+
+Man har tre hjärtan.
 
 ## Expo has changed — do not trust your training data
 
